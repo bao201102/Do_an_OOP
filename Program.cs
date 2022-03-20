@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Do_an_OOP
 {
@@ -10,6 +6,8 @@ namespace Do_an_OOP
     {
         static void Main(string[] args)
         {
+            Console.Clear();
+            Console.WriteLine("Hello World!");
         }
     }
 }
