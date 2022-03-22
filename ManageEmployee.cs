@@ -7,16 +7,28 @@ class ManageEmployee
     {
         employees = new List<Employee>();
     }
-    public ManageEmployee findId(ManageEmployee data, string id)
+    public static List<Employee> findId(ManageEmployee data, string id)
     {
-        ManageEmployee emp = new ManageEmployee();
+        // ManageEmployee emp = new ManageEmployee();
+        List<Employee> listEmp = new List<Employee>();
         foreach (Employee item in data.Employees)
         {
             if (item.Id.Contains(id))
             {
-               // emp.Add(item);
+                listEmp.Add(item);
             }
         }
-        return emp;
+        return listEmp;
+    }
+    public static List<Employee> findByType(ManageEmployee data, int type) {
+        List<Employee> listEmp = new List<Employee>();
+        foreach (Employee item in data.Employees)
+        {
+           if (item.Employee_type == type)
+            {
+                listEmp.Add(item);
+            }
+        }
+        return listEmp;
     }
 }
