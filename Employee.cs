@@ -10,7 +10,11 @@ using System.Diagnostics;
         protected string email;
         protected int employee_type;
         protected int employee_count;
-        public Employee() { }
+
+        public Employee()
+        {
+
+        }
         public Employee(string id, string fullname, string birthday, string phone, string email, int employee_type)
         {
             this.id = id;
@@ -32,7 +36,7 @@ using System.Diagnostics;
         }
         public virtual string showInfo()
         {
-            return GetType() + $" Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
+            return $"Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
         }
     
 }

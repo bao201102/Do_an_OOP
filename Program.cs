@@ -8,6 +8,10 @@ namespace Do_an_OOP
         {
             Console.Clear();
             Console.WriteLine("Hello World!");
+            
+            ManageEmployee manageEmployee = new ManageEmployee();
+            manageEmployee.findbyExp(5);
+            
         }
     }
 }

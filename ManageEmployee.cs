@@ -1,35 +1,59 @@
+using System;
 using System.Collections.Generic;
-class ManageEmployee : Database
+
+namespace Do_an_OOP
 {
-    List<Employee> employees = new List<Employee>();
-    public List<Employee> Employees { get; set; }
-    public ManageEmployee()
+    public class ManageEmployee
     {
-        employees = new List<Employee>();
-    }
-    public static List<Employee> findId(ManageEmployee data, string id)
-    {
-        // ManageEmployee emp = new ManageEmployee();
-        List<Employee> listEmp = new List<Employee>();
-        foreach (Employee item in data.Employees)
+        private List<Employee> employees = new List<Employee>();
+
+        public ManageEmployee()
         {
-            if (item.Id.Contains(id))
+            employees.Add(new Experience("01", "A", "15/5/2002", "09xxx", "@", 0, 5, "C#"));
+        }
+        public static List<Employee> findId(List<Employee> list, string id)
+        {
+            // ManageEmployee emp = new ManageEmployee();
+            List<Employee> listEmp = new List<Employee>();
+            foreach (Employee item in list)
             {
-                listEmp.Add(item);
+                if (item.Id.Contains(id))
+                {
+                    listEmp.Add(item);
+                }
+            }
+            return listEmp;
+        }
+        public static List<Employee> findByType(List<Employee> list, int type)
+        {
+            List<Employee> listEmp = new List<Employee>();
+            foreach (Employee item in list)
+            {
+                if (item.Employee_type == type)
+                {
+                    listEmp.Add(item);
+                }
+            }
+            return listEmp;
+        }
+        public void findbyExp(int yearOfExp)
+        {
+            List<Employee> listEmp = new List<Employee>();
+            foreach (Employee item in employees)
+            {
+                if (item as Experience != null)
+                {
+                    Experience tempEmp = (Experience)item;
+                    if (tempEmp.YearOfExp == yearOfExp)
+                    {
+                        listEmp.Add(item);
+                    }
+                }
+            }
+            foreach (Employee item in listEmp)
+            {
+                Console.WriteLine(item);
             }
         }
-        return listEmp;
-    }
-    public static List<Employee> findByType(ManageEmployee data, int type)
-    {
-        List<Employee> listEmp = new List<Employee>();
-        foreach (Employee item in data.Employees)
-        {
-            if (item.Employee_type == type)
-            {
-                listEmp.Add(item);
-            }
-        }
-        return listEmp;
     }
 }
