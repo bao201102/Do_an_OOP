@@ -1,6 +1,5 @@
-using System;
 using System.Collections.Generic;
-class ManageEmployee
+class ManageEmployee : Database
 {
     List<Employee> employees = new List<Employee>();
     public List<Employee> Employees { get; set; }
@@ -21,11 +20,12 @@ class ManageEmployee
         }
         return listEmp;
     }
-    public static List<Employee> findByType(ManageEmployee data, int type) {
+    public static List<Employee> findByType(ManageEmployee data, int type)
+    {
         List<Employee> listEmp = new List<Employee>();
         foreach (Employee item in data.Employees)
         {
-           if (item.Employee_type == type)
+            if (item.Employee_type == type)
             {
                 listEmp.Add(item);
             }
