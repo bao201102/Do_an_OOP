@@ -14,3 +14,19 @@ D:\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.dll
 D:\Do_an_OOP\obj\Debug\net5.0\ref\Do_an_OOP.dll
 D:\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.pdb
 D:\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.genruntimeconfig.cache
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.csproj.AssemblyReference.cache
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.AssemblyInfoInputs.cache
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.AssemblyInfo.cs
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.csproj.CoreCompileInputs.cache
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.dll
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\ref\Do_an_OOP.dll
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.pdb
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.exe
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.deps.json
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.runtimeconfig.json
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.runtimeconfig.dev.json
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.dll
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\bin\Debug\net5.0\ref\Do_an_OOP.dll
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.pdb
+C:\Users\HOAN THIEN\OneDrive\Tài liệu\GitHub\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.genruntimeconfig.cache
