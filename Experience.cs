@@ -1,19 +1,18 @@
 using System;
 using System.Collections.Generic;
-public class Experience : Employee{
+public class Experience : Employee
+{
     private int yearOfExperience;
     private string proSkills;
-    public Experience(){
-
-    }
-    public Experience(string id, string fullname, string birthday, string phone, string email, byte employee_type, int employee_count, int yearOfExperience, string proSkills) {
-        this.id = id;
-        this.fullname = fullname;
-        this.birthday = birthday;
-        this.phone = phone;
-        this.email = email;
-        this.employee_type = employee_type;
-        this.employee_count = employee_count;
+    
+    public Experience(string id, string fullname, string birthday, string phone, string email, int employee_type, int employee_count, int yearOfExperience, string proSkills) {
+        base.id = id;
+        base.fullname = fullname;
+        base.birthday = birthday;
+        base.phone = phone;
+        base.email = email;
+        base.employee_type = employee_type;
+        base.employee_count = employee_count;
         this.yearOfExperience = yearOfExperience;
         this.proSkills = proSkills;
     }

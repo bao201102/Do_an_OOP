@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-    public class Intern
+    public class Intern : Employee
     {
         public string majors;
         public int semester;
@@ -39,8 +39,15 @@ using System.Collections.Generic;
                 university = value;
             }
         }
-        public Intern(string majors,int semester,string university)
+        public Intern(string id,string fullname,string birthday,string phone,string email,int employee_type,int employee_count,string majors,int semester,string university)
         {
+            base.id = id;
+            base.fullname = fullname;
+            base.birthday = birthday;
+            base.phone = phone;
+            base.email = email;
+            base.employee_type = employee_type;
+            base.employee_count = employee_count;
             this.majors = majors;
             this.semester = semester;
             this.university = university;

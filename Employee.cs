@@ -1,7 +1,6 @@
 using System;
 using System.Diagnostics;
-namespace Do_an_OOP
-{
+
     public class Employee
     {
         protected string id;
@@ -35,5 +34,5 @@ namespace Do_an_OOP
         {
             return GetType() + $" Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
         }
-    }
+    
 }
