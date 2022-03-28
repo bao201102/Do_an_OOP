@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
     public class Intern
@@ -5,17 +6,38 @@ using System.Collections.Generic;
         public string majors;
         public int semester;
         public string university;
-        public string getMajors()
+        public string getMajors
         {
-            return this.majors;
+            get 
+            {
+                return majors;
+            }
+            set
+            {
+                majors = value;
+            }
         }
-        public int getSemester()
+        public int getSemester
         {
-            return this.semester;
+            get 
+            {
+                return semester;
+            }
+            set
+            {
+                semester = value;
+            }
         }
-        public string getUniversity()
+        public string getUniversity
         {
-            return this.university;
+            get 
+            {
+                return university;
+            }
+            set
+            {
+                university = value;
+            }
         }
         public Intern(string majors,int semester,string university)
         {
@@ -27,9 +49,9 @@ using System.Collections.Generic;
         {
             foreach (Intern i in list)
             {
-                if (i.getMajors() == majors) 
+                if (i.getMajors == majors) 
                 {
-                    System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}",i.getMajors(),i.getSemester(),i.getUniversity());
+                    System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}",i.getMajors,i.getSemester,i.getUniversity);
                     break;
                 }
             }
