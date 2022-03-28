@@ -9,7 +9,7 @@ public class Employee
     protected string email;
     protected int employee_type;
     protected int employee_count;
-    public Employee() { }
+
     public Employee(string id, string fullname, string birthday, string phone, string email, int employee_type, int employee_count)
     {
         this.id = id;
