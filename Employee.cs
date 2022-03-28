@@ -9,10 +9,14 @@ namespace Do_an_OOP
         protected string birthday;
         protected string phone;
         protected string email;
-        protected int employee_type;
+        protected byte employee_type;
         protected int employee_count;
-        public Employee() { }
-        public Employee(string id, string fullname, string birthday, string phone, string email, int employee_type)
+
+        public Employee()
+        {
+
+        }
+        public Employee(string id, string fullname, string birthday, string phone, string email, byte employee_type)
         {
             this.id = id;
             this.fullname = fullname;
@@ -26,14 +30,14 @@ namespace Do_an_OOP
             get { return id; }
             set { id = value; }
         }
-        public int Employee_type
+        public byte Employee_type
         {
             get { return employee_type; }
             set { employee_type = value; }
         }
         public virtual string showInfo()
         {
-            return GetType() + $" Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
+            return $"Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
         }
     }
 }
