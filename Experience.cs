@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 public class Experience : Employee{
-    public int yearOfExperience;
-    public string proSkills;
+    private int yearOfExperience;
+    private string proSkills;
     public Experience(){
 
     }
