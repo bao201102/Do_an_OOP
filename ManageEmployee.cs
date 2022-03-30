@@ -6,10 +6,18 @@ namespace Do_an_OOP
     public class ManageEmployee
     {
         private List<Employee> employees = new List<Employee>();
-
+        public List<Employee> Employees
+        {
+            get { return employees; }
+            set { employees = value; }
+        }
         public ManageEmployee()
         {
-            employees.Add(new Experience("01", "A", "15/5/2002", "09xxx", "@", 0, 5, "C#"));
+            employees = new List<Employee>();
+        }
+        public void Add(Employee a)
+        {
+            employees.Add(a);
         }
         public static List<Employee> findId(List<Employee> list, string id)
         {
