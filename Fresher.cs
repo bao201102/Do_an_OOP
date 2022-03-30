@@ -8,13 +8,13 @@ namespace Do_an_OOP
 {
     public class Fresher : Employee
     {
-        private int graDate;
+        private DateTime graDate;
         private byte graRank;
         private string graUni;
 
         public byte GraRank { get { return graRank; } set { graRank = value; } }
 
-        public Fresher(string id, string fullname, string birthday, string phone, string email, byte employee_type, int graDate, byte graRank, string graUni)
+        public Fresher(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type, DateTime graDate, byte graRank, string graUni)
         {
             this.id = id;
             this.fullname = fullname;
@@ -25,6 +25,10 @@ namespace Do_an_OOP
             this.graDate = graDate;
             this.graRank = graRank;
             this.graUni = graUni;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + ", Graduate Date: " + graDate.ToShortDateString() + ", Graduate Rank: " + graRank + ", Gradutate University: " + graUni;
         }
     }
 }
