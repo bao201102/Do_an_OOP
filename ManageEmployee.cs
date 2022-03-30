@@ -60,7 +60,7 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
-        public void findbySkills(string proSkill) {
+        public List<Employee> findbySkills(string proSkill) {
             List<Employee> listEmp = new List<Employee>();
             foreach (Employee item in employees)
             {
@@ -73,10 +73,7 @@ namespace Do_an_OOP
                     }
                 }
             }
-            foreach (Employee item in listEmp)
-            {
-                Console.WriteLine(item);
-            }
+            return listEmp;
         }
     }
 }
