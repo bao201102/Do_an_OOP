@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Do_an_OOP
 {
-    public class Intern : Employee
+    public class Intern : Employee, IEmployee
     {
         private string majors;
         private int semester;
