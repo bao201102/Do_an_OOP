@@ -28,7 +28,7 @@ namespace Do_an_OOP
         }
         public override string ToString()
         {
-            return base.ToString() + ", Graduate Date: " + graDate.ToShortDateString() + ", Graduate Rank: " + graRank + ", Gradutate University: " + graUni;
+            return base.ToString().Insert(8,"\t") + ", Graduate Date: " + graDate.ToShortDateString() + ", Graduate Rank: " + graRank + ", Gradutate University: " + graUni;
         }
     }
 }

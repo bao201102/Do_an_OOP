@@ -34,7 +34,7 @@ namespace Do_an_OOP
 
         public override string ToString()
         {
-            return GetType() + $" Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
+            return GetType().ToString().Remove(0,10) + $"\tId: {id}, Fullname: {fullname}, Birthday: {birthday.ToShortDateString()}, Phone: {phone}, Email: {email}";
         }
 
     }

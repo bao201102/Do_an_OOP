@@ -36,7 +36,7 @@ namespace Do_an_OOP
         }
         public override string ToString()
         {
-            return base.ToString() + ", Majors: " + majors + ", Semester: " + semester + ", University: " + university;
+            return base.ToString().Insert(7,"\t") + ", Majors: " + majors + ", Semester: " + semester + ", University: " + university;
         }
     }
 }
