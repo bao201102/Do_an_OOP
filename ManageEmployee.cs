@@ -5,25 +5,17 @@ namespace Do_an_OOP
 {
     public class ManageEmployee
     {
-        private List<Employee> employees = new List<Employee>();
-        public List<Employee> Employees
-        {
-            get { return employees; }
-            set { employees = value; }
-        }
+        Database db = new Database();
+
         public ManageEmployee()
         {
-            employees = new List<Employee>();
+
         }
-        public void Add(Employee a)
+
+        public List<Employee> FindId(string id)
         {
-            employees.Add(a);
-        }
-        public static List<Employee> findId(List<Employee> list, string id)
-        {
-            // ManageEmployee emp = new ManageEmployee();
             List<Employee> listEmp = new List<Employee>();
-            foreach (Employee item in list)
+            foreach (Employee item in db.Data)
             {
                 if (item.Id.Contains(id))
                 {
@@ -32,10 +24,10 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
-        public static List<Employee> findByType(List<Employee> list, int type)
+        public List<Employee> FindByType(byte type)
         {
             List<Employee> listEmp = new List<Employee>();
-            foreach (Employee item in list)
+            foreach (Employee item in db.Data)
             {
                 if (item.Employee_type == type)
                 {
@@ -44,10 +36,10 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
-        public List<Employee> findbyExp(int yearOfExp)
+        public List<Employee> FindByExp(int yearOfExp)
         {
             List<Employee> listEmp = new List<Employee>();
-            foreach (Employee item in employees)
+            foreach (Employee item in db.Data)
             {
                 if (item as Experience != null)
                 {
@@ -60,9 +52,10 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
-        public List<Employee> findbySkills(string proSkill) {
+        public List<Employee> FindBySkills(string proSkill) 
+        {
             List<Employee> listEmp = new List<Employee>();
-            foreach (Employee item in employees)
+            foreach (Employee item in db.Data)
             {
                 if (item as Experience != null)
                 {

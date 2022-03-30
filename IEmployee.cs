@@ -1,8 +1,5 @@
 using System;
 interface IEmployee
 {
-    public int CalcSalary()
-    {
-        return 0;
-    }
+    public int CalcSalary();
 }
