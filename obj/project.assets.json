@@ -8,16 +8,11 @@
     "net5.0": []
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\ASUS\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\Dau\\.nuget\\packages\\": {}
->>>>>>> 724dea7c34654bf76fc6d828bf42b45bd6de1358
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
       "projectName": "Do_an_OOP",
       "projectPath": "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
@@ -26,16 +21,6 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-      "projectUniqueName": "C:\\Users\\Dau\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
-      "projectName": "Do_an_OOP",
-      "projectPath": "C:\\Users\\Dau\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
-      "packagesPath": "C:\\Users\\Dau\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dau\\Documents\\GitHub\\Do_an_OOP\\obj\\",
-      "projectStyle": "PackageReference",
-      "configFilePaths": [
-        "C:\\Users\\Dau\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 724dea7c34654bf76fc6d828bf42b45bd6de1358
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -77,7 +62,6 @@
           },
           {
             "name": "Microsoft.NETCore.App.Host.win-x64",
-<<<<<<< HEAD
             "version": "[5.0.15, 5.0.15]"
           },
           {
@@ -87,9 +71,6 @@
           {
             "name": "Microsoft.WindowsDesktop.App.Ref",
             "version": "[5.0.0, 5.0.0]"
-=======
-            "version": "[5.0.13, 5.0.13]"
->>>>>>> 724dea7c34654bf76fc6d828bf42b45bd6de1358
           }
         ],
         "frameworkReferences": {
@@ -97,12 +78,16 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
->>>>>>> 724dea7c34654bf76fc6d828bf42b45bd6de1358
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
