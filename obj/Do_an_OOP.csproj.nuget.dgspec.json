@@ -1,17 +1,21 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj": {}
+=======
+    "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {}
+>>>>>>> d508acd1947d4a90db893c8702d47ff4da56d577
   },
   "projects": {
-    "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj": {
+    "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
+        "projectUniqueName": "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
         "projectName": "Do_an_OOP",
-        "projectPath": "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
+        "projectPath": "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\obj\\",
+        "outputPath": "D:\\Study\\Đồ_án\\Do_an_OOP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -49,6 +53,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+<<<<<<< HEAD
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
@@ -67,12 +72,18 @@
               "version": "[5.0.0, 5.0.0]"
             }
           ],
+=======
+>>>>>>> d508acd1947d4a90db893c8702d47ff4da56d577
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+>>>>>>> d508acd1947d4a90db893c8702d47ff4da56d577
         }
       }
     }
