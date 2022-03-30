@@ -34,7 +34,7 @@ namespace Do_an_OOP
 
         public override string ToString()
         {
-            return $"Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
+            return GetType() + $" Id: {id}, Fullname: {fullname}, Birthday: {birthday}, Phone: {phone}, Email: {email}";
         }
 
     }

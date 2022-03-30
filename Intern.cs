@@ -36,7 +36,7 @@ namespace Do_an_OOP
         }
         public override string ToString()
         {
-            return base.ToString() + ", Chuyên ngành: " + majors + ", Học kỳ: " + semester + ", Trường: " + university;
+            return base.ToString() + ", Majors: " + majors + ", Semester: " + semester + ", University: " + university;
         }
     }
 }

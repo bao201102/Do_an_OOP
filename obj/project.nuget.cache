@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Li6jcQjqPh+/DlpBpX0fcgAoFmxF8RA+/Cu+hQYuoS0PuGgDL94s7VgfJDrk2AgdKw/cGvL8d853EaX0miGpDA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
@@ -8,6 +9,13 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+=======
+  "dgSpecHash": "OwA6QH9l79iIpmTaf2bLhmpevjz2CBrmb5iLDxjS4jeyy20rma5H1cLLP13Ox4RsObyjyWdKevXkYJdAL3jHNA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dau\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dau\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+>>>>>>> 724dea7c34654bf76fc6d828bf42b45bd6de1358
   ],
   "logs": []
 }
