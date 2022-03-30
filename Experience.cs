@@ -10,7 +10,7 @@ namespace Do_an_OOP
 
         public int YearOfExp { get { return yearOfExp; } set { yearOfExp = value; } }
         public string ProSkills { get { return proSkills; } set { proSkills = value; }}
-        public Experience(string id, string fullname, string birthday, string phone, string email, byte employee_type, int yearOfExp, string proSkills)
+        public Experience(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type, int yearOfExp, string proSkills)
         {
             base.id = id;
             this.fullname = fullname;

@@ -6,11 +6,7 @@ namespace Do_an_OOP
     public class ManageEmployee
     {
         private List<Employee> employees = new List<Employee>();
-        public List<Employee> Employees
-        {
-            get { return employees; }
-            set { employees = value; }
-        }
+        public List<Employee> Employees { get { return employees; } set { employees = value; } }
         public ManageEmployee()
         {
             employees = new List<Employee>();
@@ -21,7 +17,6 @@ namespace Do_an_OOP
         }
         public static List<Employee> findId(List<Employee> list, string id)
         {
-            // ManageEmployee emp = new ManageEmployee();
             List<Employee> listEmp = new List<Employee>();
             foreach (Employee item in list)
             {
