@@ -12,6 +12,17 @@ namespace Do_an_OOP
 
         }
 
+        public void Add(Employee e)
+        {
+            db.Add(e);
+        }
+        public void ShowAllData()
+        {
+            foreach (Employee item in db.Data)
+            {
+                Console.WriteLine(item);
+            }
+        }
         public List<Employee> FindId(string id)
         {
             List<Employee> listEmp = new List<Employee>();
