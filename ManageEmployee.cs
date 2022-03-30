@@ -63,5 +63,23 @@ namespace Do_an_OOP
                 Console.WriteLine(item);
             }
         }
+        public void findbySkills(string proSkill) {
+            List<Employee> listEmp = new List<Employee>();
+            foreach (Employee item in employees)
+            {
+                if (item as Experience != null)
+                {
+                    Experience tempEmp = (Experience)item;
+                    if (tempEmp.ProSkills.Contains(proSkill))
+                    {
+                        listEmp.Add(item);
+                    }
+                }
+            }
+            foreach (Employee item in listEmp)
+            {
+                Console.WriteLine(item);
+            }
+        }
     }
 }

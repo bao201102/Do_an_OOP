@@ -9,6 +9,7 @@ namespace Do_an_OOP
         private string proSkills;
 
         public int YearOfExp { get { return yearOfExp; } set { yearOfExp = value; } }
+        public string ProSkills { get { return proSkills; } set { proSkills = value; }}
         public Experience(string id, string fullname, string birthday, string phone, string email, byte employee_type, int yearOfExp, string proSkills)
         {
             base.id = id;
@@ -21,29 +22,6 @@ namespace Do_an_OOP
             this.proSkills = proSkills;
         }
 
-        //public static Employee SearchByExperience(List<Experience> listExperienceEmployee, int yearOfExperience)
-        //{
-        //    for (int i = 0; i < listExperienceEmployee.Count; i++)
-        //    {
-        //        if (yearOfExperience == listExperienceEmployee[i].yearOfExp)
-        //        {
-        //            return listExperienceEmployee[i];
-        //        }
-        //    }
-        //    return null;
-        //}
-
-        //public static Employee SearchByProskills(List<Experience> listExperienceEmployee, string proSkills)
-        //{
-        //    for (int i = 0; i < listExperienceEmployee.Count; i++)
-        //    {
-        //        if (proSkills == listExperienceEmployee[i].proSkills)
-        //        {
-        //            return listExperienceEmployee[i];
-        //        }
-        //    }
-        //    return null;
-        //}
 
         public override string ToString()
         {
