@@ -44,5 +44,9 @@ public class Intern : Employee
             }
         }
     }
+    public override string ToString()
+    {
+        return base.showInfo() + ", Chuyên ngành: " + majors + ", Học kỳ: " + semester + ", Trường: " + university;
+    }
 
 }
