@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hHvbu+FY1YwtvAg+DTULycKZjnDa/XFXaJs38V7HWWnYrz+vVlxHR4mYSdehWkFykG0GVg1TAzHR+0hgJZ3iSw==",
+  "dgSpecHash": "EgEDaX0hHX1pTFm5ztSE+ojp2H0yWl/+N0o0BW1RA7DU3F5M10ItxE/hoiJQZ8oTbDKOph3NmvFVrpT5t8k3hg==",
   "success": true,
-  "projectFilePath": "d:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\HOAN THIEN\\OneDrive\\Tài liệu\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HOAN THIEN\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
+  ],
   "logs": []
 }

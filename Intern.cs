@@ -23,17 +23,6 @@ namespace Do_an_OOP
             this.semester = semester;
             this.university = university;
         }
-        public void MajorsSearch(string majors, List<Intern> list)
-        {
-            foreach (Intern i in list)
-            {
-                if (i.Majors == majors)
-                {
-                    System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}", i.Majors, i.Semester, i.University);
-                    break;
-                }
-            }
-        }
         public override string ToString()
         {
             return base.ToString().Insert(7, "\t") + $", Majors: {majors}, Semester: {semester}, University: {university}";

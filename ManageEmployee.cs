@@ -109,5 +109,16 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
+        public void MajorsSearch(string majors, List<Intern> list)
+        {
+            foreach (Intern i in list)
+            {
+                if (i.Majors == majors)
+                {
+                    System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}", i.Majors, i.Semester, i.University);
+                    break;
+                }
+            }
+        }
     }
 }
