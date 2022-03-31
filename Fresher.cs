@@ -10,6 +10,7 @@ namespace Do_an_OOP
     {
         private DateTime graDate;
         private byte graRank;
+        private string graRankName;
         private string graUni;
 
         public byte GraRank { get { return graRank; } set { graRank = value; } }
@@ -25,10 +26,28 @@ namespace Do_an_OOP
             this.graDate = graDate;
             this.graRank = graRank;
             this.graUni = graUni;
+
+            switch (this.graRank)
+            {
+                case 0:
+                    this.graRankName = "Trung Bình";
+                    break;
+                case 1:
+                    this.graRankName = "Khá";
+                    break;
+                case 2:
+                    this.graRankName = "Giỏi";
+                    break;
+                case 3:
+                    this.graRankName = "Xuất sắc";
+                    break;
+                default:
+                    break;
+            }
         }
         public override string ToString()
         {
-            return base.ToString().Insert(8,"\t") + ", Graduate Date: " + graDate.ToShortDateString() + ", Graduate Rank: " + graRank + ", Gradutate University: " + graUni;
+            return base.ToString().Insert(8, "\t") + ", Graduate Date: " + graDate.ToShortDateString() + ", Graduate Rank: " + graRankName + ", Gradutate University: " + graUni;
         }
     }
 }

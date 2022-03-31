@@ -1,28 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "Li6jcQjqPh+/DlpBpX0fcgAoFmxF8RA+/Cu+hQYuoS0PuGgDL94s7VgfJDrk2AgdKw/cGvL8d853EaX0miGpDA==",
+  "dgSpecHash": "hHvbu+FY1YwtvAg+DTULycKZjnDa/XFXaJs38V7HWWnYrz+vVlxHR4mYSdehWkFykG0GVg1TAzHR+0hgJZ3iSw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\Do_an_OOP.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
-  ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\ASUS\\Documents\\GitHub\\Do_an_OOP\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
-=======
-  "dgSpecHash": "m5vrIEV4/yWMN+XluI+WmgXARRlmZwBt70CuJD6AcS+4C58eKxT7tyhuYs+qBoUDiXj1UmmuGDXV48j7eYK7Ag==",
-  "success": true,
-  "projectFilePath": "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
+  "projectFilePath": "d:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
   "expectedPackageFiles": [],
   "logs": []
->>>>>>> d508acd1947d4a90db893c8702d47ff4da56d577
 }
