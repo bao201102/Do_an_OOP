@@ -24,7 +24,7 @@ namespace Do_an_OOP
 
         public override string ToString()
         {
-            return base.ToString() + ", Year of experience: " + yearOfExp + ", Pro skills: " + proSkills;
+            return base.ToString() + $", Year of experience: {yearOfExp}, Pro skills: {proSkills}";
         }
     }
 }

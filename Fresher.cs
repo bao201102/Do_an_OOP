@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Do_an_OOP
 {
-    public class Fresher : Employee
+    public class Fresher : Employee, IEmployee
     {
         private DateTime graDate;
         private byte graRank;
@@ -47,7 +47,20 @@ namespace Do_an_OOP
         }
         public override string ToString()
         {
-            return base.ToString().Insert(8, "\t") + ", Graduate Date: " + graDate.ToShortDateString() + ", Graduate Rank: " + graRankName + ", Gradutate University: " + graUni;
+            return base.ToString().Insert(8, "\t") + $", Graduate Date: {graDate.ToShortDateString()}, Rank: {graRankName}, University: {graUni}";
+        }
+
+        public double CalcSalary()
+        {
+            if (graRank > 0)
+            {
+                return 8000000 + 250000 * (graRank / 2);
+            }
+            return 800000;
+        }
+        public override string ShowSalary()
+        {
+            return GetType().ToString().Remove(0, 10) + $"\tId: {id}, Fullname: {fullname}, Rank: {graRankName}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
         }
     }
 }
