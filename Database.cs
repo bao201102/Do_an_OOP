@@ -13,8 +13,8 @@ namespace Do_an_OOP
             data = new List<Employee>();
             data.Add(new Experience("01", "A", new DateTime(2002, 5, 18), "09xxx", "@", 0, 5, "C#"));
             data.Add(new Experience("02", "B", new DateTime(2002, 5, 18), "09xxx", "@", 0, 5, "C#"));
-            data.Add(new Intern("03", "B", new DateTime(2002, 5, 18), "09xxx", "@", 1, "gioi", 4, "UEH"));
-            data.Add(new Fresher("02", "B", new DateTime(2002, 5, 18), "09xxx", "@",2,new DateTime(2022,5,23),4,"UEH"));
+            data.Add(new Intern("03", "B", new DateTime(2002, 5, 18), "09xxx", "@", 1, "IT", 4, "UEH"));
+            data.Add(new Fresher("04", "B", new DateTime(2002, 5, 18), "09xxx", "@", 2, new DateTime(2022, 5, 23), 3, "UEH"));
         }
 
         public void Add(Employee emp)

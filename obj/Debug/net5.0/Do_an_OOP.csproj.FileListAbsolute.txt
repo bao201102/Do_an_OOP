@@ -1,9 +1,9 @@
 D:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.exe
-D:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.deps.json
-D:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.runtimeconfig.json
-D:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.runtimeconfig.dev.json
+d:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.deps.json
+d:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.runtimeconfig.json
+d:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.runtimeconfig.dev.json
 D:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.dll
-D:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\ref\Do_an_OOP.dll
+d:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\ref\Do_an_OOP.dll
 D:\Study\Đồ_án\Do_an_OOP\bin\Debug\net5.0\Do_an_OOP.pdb
 D:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.csproj.AssemblyReference.cache
 D:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.GeneratedMSBuildEditorConfig.editorconfig
@@ -13,4 +13,4 @@ D:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.csproj.CoreCompileInputs
 D:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.dll
 D:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\ref\Do_an_OOP.dll
 D:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.pdb
-D:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.genruntimeconfig.cache
+d:\Study\Đồ_án\Do_an_OOP\obj\Debug\net5.0\Do_an_OOP.genruntimeconfig.cache

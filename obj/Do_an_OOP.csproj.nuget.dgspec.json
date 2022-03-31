@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {}
+    "d:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {}
   },
   "projects": {
-    "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {
+    "d:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
+        "projectUniqueName": "d:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
         "projectName": "Do_an_OOP",
-        "projectPath": "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
+        "projectPath": "d:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
         "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\Đồ_án\\Do_an_OOP\\obj\\",
+        "outputPath": "d:\\Study\\Đồ_án\\Do_an_OOP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
