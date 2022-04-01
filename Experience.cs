@@ -21,6 +21,13 @@ namespace Do_an_OOP
             this.yearOfExp = yearOfExp;
             this.proSkills = proSkills;
         }
+        public double CalcSalary() {
+            return yearOfExp * 5000000;
+        }
+        public override string ShowSalary()
+        {
+            return GetType().ToString().Remove(0, 10) + $"\tId: {id}, Fullname: {fullname}, Year of experiences: {yearOfExp}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
+        }
 
         public override string ToString()
         {

@@ -11,10 +11,20 @@ namespace Do_an_OOP
             Console.SetWindowSize(180, 40);
             Console.OutputEncoding = Encoding.Unicode;
             Console.InputEncoding = Encoding.Unicode;
-
-            ManageEmployee manageEmployee = new ManageEmployee();
-            manageEmployee.ShowAllEmp();
-            manageEmployee.ShowEmpSalary(manageEmployee.FindByType(2));
+            Database db = new Database();
+            string username = "admin1";
+            string password = "123";
+            if(db.query4Login(username, password)) {
+                System.Console.WriteLine("Đăng nhập thành công");
+                ManageEmployee manageEmployee = new ManageEmployee();
+                manageEmployee.ShowAllEmp();
+                manageEmployee.ShowEmpSalary(manageEmployee.FindByType(2));
+                manageEmployee.ShowEmpSalary(manageEmployee.FindByType(0));
+            }else {
+                System.Console.WriteLine("Đăng nhập không thành công");
+            }
+            
+            
         }
     }
 }
