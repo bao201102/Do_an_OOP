@@ -60,7 +60,7 @@ namespace Do_an_OOP
         }
         public override string ShowSalary()
         {
-            return GetType().ToString().Remove(0, 10) + $"\tId: {id}, Fullname: {fullname}, Rank: {graRankName}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
+            return GetType().ToString().Remove(0, 10) + $"\t\tId: {id}, Fullname: {fullname}, Rank: {graRankName}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
         }
     }
 }

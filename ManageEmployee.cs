@@ -12,9 +12,16 @@ namespace Do_an_OOP
 
         }
 
-        public void Add(Employee e)
+        public void Add(Employee dt)
         {
-            db.Add(e);
+            foreach (Employee item in db.Data)
+            {
+                if ((dt.Id).Contains(item.Id))
+                {
+                    System.Console.WriteLine("Id {0} đã tồn tại",dt.Id);
+                }
+            }
+            db.Add(dt);
         }
         public void ShowAllEmp()
         {
