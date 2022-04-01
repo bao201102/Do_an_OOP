@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 namespace Do_an_OOP
 {
-    public class Experience : Employee
+    public class Experience : Employee, IEmployee
 
     {
         private int yearOfExp;
@@ -21,7 +21,8 @@ namespace Do_an_OOP
             this.yearOfExp = yearOfExp;
             this.proSkills = proSkills;
         }
-        public double CalcSalary() {
+        public double CalcSalary()
+        {
             return yearOfExp * 5000000;
         }
         public override string ShowSalary()

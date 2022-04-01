@@ -18,7 +18,8 @@ namespace Do_an_OOP
             {
                 if ((dt.Id).Contains(item.Id))
                 {
-                    System.Console.WriteLine("Id {0} đã tồn tại",dt.Id);
+                    System.Console.WriteLine("Id {0} đã tồn tại", dt.Id);
+                    return;
                 }
             }
             db.Add(dt);
@@ -116,16 +117,21 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
-        public void MajorsSearch(string majors, List<Intern> list)
+        public List<Employee> FindByMajors(string majors)
         {
-            foreach (Intern i in list)
+            List<Employee> listEmp = new List<Employee>();
+            foreach (Intern item in db.Data)
             {
-                if (i.Majors == majors)
+                if (item as Intern != null)
                 {
-                    System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}", i.Majors, i.Semester, i.University);
-                    break;
+                    Intern tempEmp = (Intern)item;
+                    if (tempEmp.Majors == majors)
+                    {
+                        listEmp.Add(item);
+                    }
                 }
             }
+            return listEmp;
         }
     }
 }
