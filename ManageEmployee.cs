@@ -14,7 +14,19 @@ namespace Do_an_OOP
 
         public void Add(Employee e)
         {
+<<<<<<< HEAD
             db.Add(e);
+=======
+            foreach (Employee item in db.Data)
+            {
+                if ((dt.Id).Contains(item.Id))
+                {
+                    System.Console.WriteLine("Id {0} đã tồn tại", dt.Id);
+                    return;
+                }
+            }
+            db.Add(dt);
+>>>>>>> 5bac65e5c0e056f18a39867570bb5cf11bed4a69
         }
         public void ShowAllEmp()
         {
@@ -109,16 +121,21 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
-        public void MajorsSearch(string majors, List<Intern> list)
+        public List<Employee> FindByMajors(string majors)
         {
-            foreach (Intern i in list)
+            List<Employee> listEmp = new List<Employee>();
+            foreach (Intern item in db.Data)
             {
-                if (i.Majors == majors)
+                if (item as Intern != null)
                 {
-                    System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}", i.Majors, i.Semester, i.University);
-                    break;
+                    Intern tempEmp = (Intern)item;
+                    if (tempEmp.Majors == majors)
+                    {
+                        listEmp.Add(item);
+                    }
                 }
             }
+            return listEmp;
         }
     }
 }
