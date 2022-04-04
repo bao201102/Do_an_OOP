@@ -1,5 +1,5 @@
 using System;
-interface IEmployee
+public interface IEmployee
 {
     public double CalcSalary();
 }
