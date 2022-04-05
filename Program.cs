@@ -123,10 +123,31 @@ namespace Do_an_OOP
                                 manageEmployee.Add(newExp);
                                 break;
                             case 1:
-                                System.Console.WriteLine("Nhập vào chuyên ngành: ");
+                                InputInfoBasic(ref id, ref fullname, ref day, ref month, ref year, ref date, ref phone, ref email);
+                                System.Console.Write("Nhập vào chuyên ngành: ");
                                 string majors = Console.ReadLine();
                                 System.Console.Write("Nhập vào học kì: ");
-                                string semester = Console.ReadLine();
+                                int semester = int.Parse(Console.ReadLine());
+                                System.Console.Write("Nhập vào trường đại học: ");
+                                string university = Console.ReadLine();
+                                Intern newIntern = new Intern(id, fullname, date, phone, email, choose4, majors, semester, university);
+                                manageEmployee.Add(newIntern);
+                                break;
+                            case 2:
+                                InputInfoBasic(ref id, ref fullname, ref day, ref month, ref year, ref date, ref phone, ref email);
+                                System.Console.Write("Nhập vào ngày tốt nghiệp: ");
+                                int dayGra = int.Parse(Console.ReadLine());
+                                System.Console.Write("Nhập vào tháng tốt nghiệp: ");
+                                int monthGra = int.Parse(Console.ReadLine());
+                                System.Console.Write("Nhập vào năm tốt nghiệp: ");
+                                int yearGra = int.Parse(Console.ReadLine());
+                                System.Console.Write("Nhập vào hạng tốt nghiệp: ");
+                                byte graRank = byte.Parse(Console.ReadLine());
+                                System.Console.Write("Nhập vào trường tốt nghiệp: ");
+                                string graUni = Console.ReadLine();
+                                DateTime graDate = new DateTime(yearGra, monthGra, dayGra);
+                                Fresher newFresher = new Fresher(id, fullname, date, phone, email, choose4, graDate, graRank, graUni);
+                                manageEmployee.Add(newFresher);
                                 break;
                         }
                         System.Console.WriteLine("Sau khi thêm, danh sách nhân viên mới là: ");
