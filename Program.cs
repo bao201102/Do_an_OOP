@@ -132,7 +132,7 @@ namespace Do_an_OOP
                                 System.Console.Write("Nhập vào kĩ năng: ");
                                 string proSkills = Console.ReadLine();
                                 Experience newExp = new Experience(id, fullname, date, phone, email, choose4, yearOfExp, proSkills);
-                                manageEmployee.Add(newExp);
+                                db.Add(newExp);
                                 break;
                             case 1:
                                 InputInfoBasic(ref id, ref fullname, ref day, ref month, ref year, ref date, ref phone, ref email);
@@ -162,14 +162,17 @@ namespace Do_an_OOP
                                 manageEmployee.Add(newFresher);
                                 break;
                         }
-                        System.Console.WriteLine("Sau khi thêm, danh sách nhân viên mới là: ");
-                        manageEmployee.ShowAllEmp();
                         break;
                     case 5:
                         Console.Clear();
                         System.Console.Write("Nhập vào id của nhân viên: ");
                         string id1 = Console.ReadLine();
                         manageEmployee.Edit(id1);
+                        break;
+                    case 6:
+                        System.Console.Write("Nhập vào id của nhân viên muốn xóa: ");
+                        string idDel = Console.ReadLine();
+                        db.Remove(idDel);
                         break;
                     default:
                         System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 6");

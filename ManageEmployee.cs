@@ -29,13 +29,13 @@ namespace Do_an_OOP
         public void Add(Employee e) {
             db.Add(e);
         }
-        public void ShowAllEmp()
-        {
-            foreach (Employee item in db.Data)
-            {
-                Console.WriteLine(item);
-            }
-        }
+        // public void ShowAllEmp()
+        // {
+        //     foreach (Employee item in db.Data)
+        //     {
+        //         Console.WriteLine(item);
+        //     }
+        // }
         public void ShowEmpInfo(List<Employee> listEmp)
         {
             foreach (Employee item in listEmp)
@@ -202,9 +202,6 @@ namespace Do_an_OOP
             if(count == 0) {
                 System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
             }
-        }
-        public void DeleteById(string id) {
-            Employee empDel = this.FindById(id);
         }
         public void EditInfoBasic() {
             System.Console.WriteLine("Bạn muốn chỉnh sửa:");

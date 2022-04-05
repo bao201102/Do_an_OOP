@@ -42,6 +42,11 @@ namespace Do_an_OOP
             }
             data.Add(emp);
         }
+        public void Remove(string id) {
+            System.Console.WriteLine("Xóa thành công");
+            data.RemoveAll(item => item.Id.Contains(id));
+            
+        }
         public void ShowAllEmp() {
             foreach(var item in Data) {
                 System.Console.WriteLine(item);
