@@ -50,17 +50,29 @@ namespace Do_an_OOP
                 Console.WriteLine(item.ShowSalary());
             }
         }
-        public List<Employee> FindId(string id)
+        // public List<Employee> FindId(string id)
+        // {
+        //     List<Employee> listEmp = new List<Employee>();
+        //     foreach (Employee item in db.Data)
+        //     {
+        //         if (item.Id.Contains(id))
+        //         {
+        //             listEmp.Add(item);
+        //         }
+        //     }
+        //     return listEmp;
+        // }
+        public Employee FindById(string id)
         {
-            List<Employee> listEmp = new List<Employee>();
+            Employee emp = new Employee();
             foreach (Employee item in db.Data)
             {
-                if (item.Id.Contains(id))
+                if (item.Id.Equals(id))
                 {
-                    listEmp.Add(item);
+                    emp = item;
                 }
             }
-            return listEmp;
+            return emp;
         }
         public List<Employee> FindByType(byte type)
         {
@@ -133,22 +145,17 @@ namespace Do_an_OOP
                 }
             }
         }
-        public void Edit() {
-            System.Console.Write("Nhập vào id của nhân viên cần chỉnh sửa: ");
-            string id = Console.ReadLine();
+        public void Edit(string id) {
             Database db = new Database();
+            int count = 0;
             foreach(Employee item in db.Data) {
                 if(item as Experience != null) {
                     Experience tempEmp = (Experience)item;
                     if (tempEmp.Id == id)
                     {
+                        count++;
                         System.Console.WriteLine("Thông tin nhân viên hiện tại: " + tempEmp);
-                        System.Console.WriteLine("Bạn muốn chỉnh sửa:");
-                        System.Console.WriteLine("1. Họ tên");
-                        System.Console.WriteLine("2. Ngày sinh");
-                        System.Console.WriteLine("3. Số điện thoại");
-                        System.Console.WriteLine("4. Email");
-                        System.Console.WriteLine("5. Loại nhân viên");
+                        this.EditInfoBasic();
                         System.Console.WriteLine("6. Năm kinh nghiệm");
                         System.Console.WriteLine("7. Kỹ năng chuyên môn");
                         System.Console.Write("Nhập lựa chọn của bạn: ");
@@ -189,12 +196,23 @@ namespace Do_an_OOP
                                 break;
                         }
                         System.Console.WriteLine("Sau khi nhập, thông tin nhân viên mới là: " + tempEmp);
-                    }else {
-                        System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
                     }
                 }
             }
+            if(count == 0) {
+                System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
+            }
         }
-        
+        public void DeleteById(string id) {
+            Employee empDel = this.FindById(id);
+        }
+        public void EditInfoBasic() {
+            System.Console.WriteLine("Bạn muốn chỉnh sửa:");
+            System.Console.WriteLine("1. Họ tên");
+            System.Console.WriteLine("2. Ngày sinh");
+            System.Console.WriteLine("3. Số điện thoại");
+            System.Console.WriteLine("4. Email");
+            System.Console.WriteLine("5. Loại nhân viên");
+        }
     }
 }

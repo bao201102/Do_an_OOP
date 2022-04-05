@@ -16,6 +16,11 @@ namespace Do_an_OOP
         }
         static void Main(string[] args)
         {
+            // ManageEmployee manageEmployee1 = new ManageEmployee();
+            // Database db3 = new Database();
+            // db3.ShowAllEmp();
+            // db3.Add(new Experience("09", "J", new DateTime(2002, 8, 31), "0977xxx", "@", 0, 4, "PHP"));
+            // db3.ShowAllEmp();
             // Console.OutputEncoding = System.Text.Encoding.UTF8;
             // Console.Clear();
             // //Console.SetWindowSize(180, 40);
@@ -48,37 +53,42 @@ namespace Do_an_OOP
             
             System.Console.WriteLine("================ĐỒ ÁN MÔN HỌC LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG===============");
             System.Console.WriteLine("                       ĐỀ TÀI: QUẢN LÍ NHÂN VIÊN ");
-            System.Console.WriteLine("                 NHÓM THỰC HIỆN: BẢO, DẬU, ĐẠT, THIỆN");
+            System.Console.WriteLine("                 NHÓM THỰC HIỆN: ĐẠT, BẢO, DẬU, THIỆN");
             System.Console.WriteLine("                         ************************                   ");
             BEGIN:   
-            System.Console.WriteLine("=========================ĐĂNG NHẬP VÀO HỆ THỐNG======================="); 
+            System.Console.WriteLine("==========================ĐĂNG NHẬP VÀO HỆ THỐNG======================="); 
             System.Console.Write("Nhập vào tài khoản: ");
             string username = Console.ReadLine();
             System.Console.Write("Nhập vào mật khẩu: ");
             string password = Console.ReadLine();
             Database db = new Database();
             if(db.query4Login(username, password)) {
+                Console.Clear();
                 System.Console.WriteLine("Chào mừng trở lại, " + username);
-                System.Console.WriteLine("----------------PHẦN MỀM QUẢN LÍ NHÂN VIÊN--------------");
-                System.Console.WriteLine("___________________DANH SÁCH NHÂN VIÊN__________________");
+                BEGIN2:
                 ManageEmployee manageEmployee = new ManageEmployee();
-                manageEmployee.ShowAllEmp();
+                System.Console.WriteLine("----------------PHẦN MỀM QUẢN LÍ NHÂN VIÊN--------------");
                 System.Console.WriteLine("Các chức năng: ");
+                System.Console.WriteLine("0. Xem danh sách nhân viên");
                 System.Console.WriteLine("1. Xem danh sách nhân viên theo loại");
                 System.Console.WriteLine("2. Tìm nhân viên theo id");
                 System.Console.WriteLine("3. Tìm thông tin nhân viên theo loại");
                 System.Console.WriteLine("4. Thêm nhân viên");
                 System.Console.WriteLine("5. Cập nhật thông tin nhân viên");
-                System.Console.WriteLine("6. Xóa nhân viên");
-                System.Console.WriteLine("7. Thoát chương trình");
+                System.Console.WriteLine("6. Xóa nhân viên theo Id");
                 System.Console.Write("Nhập vào lựa chọn của bạn: ");
                 int chooseNumber = int.Parse(Console.ReadLine());
                 string id = ""; string fullname = ""; int day = 0; int month = 0; int year = 0; DateTime date = new DateTime();
                 string phone = ""; string email = "";
                 switch (chooseNumber) {
+                    case 0:
+                        Console.Clear();
+                        System.Console.WriteLine("___________________DANH SÁCH NHÂN VIÊN__________________");
+                        db.ShowAllEmp();
+                        break;
                     case 1:
                         Console.Clear();
-                        System.Console.WriteLine("===============CÁC LOẠT NHÂN VIÊN=============");
+                        System.Console.WriteLine("===============CÁC LOẠI NHÂN VIÊN=============");
                         System.Console.WriteLine("0. Experience");
                         System.Console.WriteLine("1. Intern");
                         System.Console.WriteLine("2. Fresher");
@@ -96,16 +106,18 @@ namespace Do_an_OOP
                         Console.Clear();
                         System.Console.Write("Nhập vào id của nhân viên bạn muốn tìm: ");
                         id = Console.ReadLine();
-                        List<Employee> listEmp1 = new List<Employee>();
-                        listEmp1 = manageEmployee.FindId(id);
-                        System.Console.WriteLine("Nhân viên bạn cần tìm là: ");
-                        foreach(var item in listEmp1) {
-                            System.Console.WriteLine(item);
+                        Employee emp = new Employee();
+                        emp = manageEmployee.FindById(id);
+                        if(emp.Id != null) {
+                            System.Console.WriteLine("Nhân viên bạn cần tìm là: ");
+                            System.Console.WriteLine(emp);
+                        }else {
+                            System.Console.WriteLine("Người dùng không tồn tại trong hệ thống");
                         }
                         break;
                     case 4: 
                         Console.Clear();
-                        System.Console.WriteLine("===============CÁC LOẠT NHÂN VIÊN=============");
+                        System.Console.WriteLine("===============CÁC LOẠI NHÂN VIÊN=============");
                         System.Console.WriteLine("0. Experience");
                         System.Console.WriteLine("1. Intern");
                         System.Console.WriteLine("2. Fresher");
@@ -153,9 +165,42 @@ namespace Do_an_OOP
                         System.Console.WriteLine("Sau khi thêm, danh sách nhân viên mới là: ");
                         manageEmployee.ShowAllEmp();
                         break;
-                    default:
+                    case 5:
+                        Console.Clear();
+                        System.Console.Write("Nhập vào id của nhân viên: ");
+                        string id1 = Console.ReadLine();
+                        manageEmployee.Edit(id1);
                         break;
+                    default:
+                        System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 6");
+                        goto BACK;
                 }
+                BACK:
+                System.Console.WriteLine("Bạn có muốn quay lại màn hình chính");
+                System.Console.WriteLine("1. Có");
+                System.Console.WriteLine("2. Không");
+                System.Console.Write("Nhập lựa chọn của bạn: ");
+                int choose = int.Parse(Console.ReadLine());
+                if(choose == 1) {
+                    Console.Clear();
+                    goto BEGIN2;
+                }
+                else {
+                    Exit();
+                    int chooseNum = int.Parse(Console.ReadLine());
+                    switch (chooseNum)
+                    {
+                        case 2:
+                            Console.Clear();
+                            goto BEGIN2;
+                        case 1:
+                            System.Console.WriteLine("Thoát chương trình thành công");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                
             }else {
                 System.Console.WriteLine("Tài khoản hoặc mật khẩu không đúng. Bạn có muốn tiếp tục?");
                 System.Console.WriteLine("Yes (Ấn phím 1)");
@@ -164,17 +209,17 @@ namespace Do_an_OOP
                 int chooseNumber = int.Parse(Console.ReadLine());
                 switch (chooseNumber)
                 {
-                    case 1:
-                        goto BEGIN;
                     case 2:
+                        Console.Clear();
+                        goto BEGIN;
+                    case 1:
                         System.Console.WriteLine("Thoát chương trình thành công");
                         break;
                     default:
                         break;
                 }
             }
-            
-            
+
         } 
         public static void InputInfoBasic(ref string id, ref string fullname, ref int day, ref int month, ref int year, ref DateTime date, ref string phone, ref string email) {
             System.Console.Write("Nhập vào id: ");
@@ -192,6 +237,12 @@ namespace Do_an_OOP
             phone = Console.ReadLine();
             System.Console.Write("Nhập vào email: ");
             email = Console.ReadLine();
+        }
+        public static void Exit() {
+            System.Console.WriteLine("Bạn có muốn thoát chương trình?");
+            System.Console.WriteLine("1. Có");
+            System.Console.WriteLine("2. Không");
+            System.Console.Write("Nhập lựa chọn của bạn: ");
         }
     }
 }

@@ -16,7 +16,6 @@ namespace Do_an_OOP
             data.Add(new Experience("02", "B", new DateTime(2002, 5, 18), "09xxx", "@", 0, 5, "C#"));
             data.Add(new Intern("03", "B", new DateTime(2002, 5, 18), "09xxx", "@", 1, "IT", 4, "UEH"));
             data.Add(new Fresher("04", "B", new DateTime(2002, 5, 18), "09xxx", "@", 2, new DateTime(2022, 5, 23), 3, "UEH"));
-
             adminAccounts.Add("admin", "123");
             adminAccounts.Add("user1", "123");
             adminAccounts.Add("user2", "456");
@@ -42,6 +41,11 @@ namespace Do_an_OOP
                 }
             }
             data.Add(emp);
+        }
+        public void ShowAllEmp() {
+            foreach(var item in Data) {
+                System.Console.WriteLine(item);
+            }
         }
     }
 }
