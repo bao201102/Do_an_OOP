@@ -12,8 +12,21 @@ namespace Do_an_OOP
 
         }
 
-        public void Add(Employee e)
-        {
+        // public void Add(int empType)
+        // {
+        //     this.InputInfoBasic();
+        //     if(empType == 0) {
+        //         System.Console.WriteLine("Nhập vào năm kinh nghiệm: ");
+        //         int yearOfExp = int.Parse(Console.ReadLine());
+        //     }else if(empType == 1) {
+        //         System.Console.WriteLine("Nhập vào chuyên ngành: ");
+        //         string majors = Console.ReadLine();
+        //         System.Console.WriteLine("Nhập vào học kì: ");
+        //         string semester = Console.ReadLine();
+
+        //     }
+        // }
+        public void Add(Employee e) {
             db.Add(e);
         }
         public void ShowAllEmp()
@@ -182,5 +195,6 @@ namespace Do_an_OOP
                 }
             }
         }
+        
     }
 }
