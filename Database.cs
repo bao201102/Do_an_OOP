@@ -43,8 +43,19 @@ namespace Do_an_OOP
             data.Add(emp);
         }
         public void Remove(string id) {
-            System.Console.WriteLine("Xóa thành công");
-            data.RemoveAll(item => item.Id.Contains(id));
+            int count = 0;
+            foreach(var item in Data) {
+                if(item.Id == id) {
+                    count++;
+                }
+            }
+            if(count != 0) {
+                System.Console.WriteLine("Xóa thành công");
+                data.RemoveAll(item => item.Id.Contains(id));
+            }else {
+                System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
+            }
+            
         }
 
         public void Edit(string id) {
@@ -170,10 +181,12 @@ namespace Do_an_OOP
                         }
                     }
                 }
-                System.Console.WriteLine("Chỉnh sửa thành công");
+
             }
             if(count == 0) {
                 System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
+            }else {
+                System.Console.WriteLine("Chỉnh sửa thành công");
             }
         }
         public void ShowAllEmp() {

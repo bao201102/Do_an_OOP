@@ -134,16 +134,37 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
-        public void MajorsSearch(string majors, List<Intern> list)
+        // public void MajorsSearch(string majors, List<Intern> list)
+        // {
+        //     int count = 0;
+        //     foreach (Intern i in list)
+        //     {
+        //         if (i.Majors == majors)
+        //         {
+        //             count++;
+        //             System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}", i.Majors, i.Semester, i.University);
+        //             break;
+        //         }
+        //     }
+        //     if(count == 0) {
+        //         System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
+        //     }
+        // }
+        public List<Employee> FindByMajor(string major)
         {
-            foreach (Intern i in list)
+            List<Employee> listEmp = new List<Employee>();
+            foreach (Employee item in db.Data)
             {
-                if (i.Majors == majors)
+                if (item as Intern != null)
                 {
-                    System.Console.WriteLine("Chuyên ngành: {0} Học kỳ: {1} Trường: {2}", i.Majors, i.Semester, i.University);
-                    break;
+                    Intern tempEmp = (Intern)item;
+                    if (tempEmp.Majors == major)
+                    {
+                        listEmp.Add(item);
+                    }
                 }
             }
+            return listEmp;
         }
     }
 }

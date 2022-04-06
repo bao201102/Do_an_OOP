@@ -115,6 +115,109 @@ namespace Do_an_OOP
                             System.Console.WriteLine("Người dùng không tồn tại trong hệ thống");
                         }
                         break;
+                    case 3:
+                        Console.Clear();
+                        System.Console.WriteLine("===============CÁC LOẠI NHÂN VIÊN=============");
+                        System.Console.WriteLine("0. Experience");
+                        System.Console.WriteLine("1. Intern");
+                        System.Console.WriteLine("2. Fresher");
+                        System.Console.WriteLine("");
+                        System.Console.Write("Nhập vào loại nhân viên muốn tìm: ");
+                        int chooseNum = int.Parse(Console.ReadLine());
+                        switch(chooseNum) {
+                            case 0:
+                                System.Console.WriteLine("1. Tìm theo số năm kinh nghiệm");
+                                System.Console.WriteLine("2. Tìm theo kĩ năng chuyên môn");
+                                System.Console.Write("Nhập lựa chọn của bạn: ");
+                                int select = int.Parse(Console.ReadLine());
+                                switch (select)
+                                {
+                                    case 1:
+                                        System.Console.Write("Nhập vào số năm kinh nghiệm: ");
+                                        int yearOfExp = int.Parse(Console.ReadLine());
+                                        List<Employee> listExp = manageEmployee.FindByExp(yearOfExp);
+                                        int count1 = 0;
+                                        foreach(var item in listExp) {
+                                            if(item != null) {
+                                                count1++;
+                                            }
+                                        }
+                                        if(count1 != 0) {
+                                            System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                                            foreach(var item in listExp) {
+                                                System.Console.WriteLine(item);
+                                            }
+                                        }else {
+                                            System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
+                                        }
+                                        break;
+                                    case 2:
+                                        System.Console.Write("Nhập vào kĩ năng chuyên môn: ");
+                                        string proSkills = Console.ReadLine();
+                                        List<Employee> listExp1 = manageEmployee.FindBySkills(proSkills);
+                                        int count2 = 0;
+                                        foreach(var item in listExp1) {
+                                            if(item != null) {
+                                                count2++;
+                                            }
+                                        }
+                                        if(count2 != 0) {
+                                            System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                                            foreach(var item in listExp1) {
+                                                System.Console.WriteLine(item);
+                                            }
+                                        }else {
+                                            System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
+                                        }
+                                        break;
+                                    default:
+                                        System.Console.WriteLine("Vui lòng nhập lựa chọn từ 1 -> 2");
+                                        break;
+                                }
+                                break;
+                            case 1:
+                                System.Console.Write("Nhập vào chuyên ngành: ");
+                                string major = Console.ReadLine();
+                                List<Employee> listIntern = manageEmployee.FindByMajor(major);
+                                int count3 = 0;
+                                foreach(var item in listIntern) {
+                                    if(item != null) {
+                                        count3++;
+                                    }
+                                }
+                                if(count3 != 0) {
+                                    System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                                    foreach(var item in listIntern) {
+                                        System.Console.WriteLine(item);
+                                    }
+                                }else {
+                                    System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
+                                }
+                                break;
+                            case 2:
+                                System.Console.Write("Nhập vào hạng tốt nghiệp: ");
+                                byte graRank = byte.Parse(Console.ReadLine());
+                                 List<Employee> listFresher = manageEmployee.FindByGraRank(graRank);
+                                int count4 = 0;
+                                foreach(var item in listFresher) {
+                                    if(item != null) {
+                                        count4++;
+                                    }
+                                }
+                                if(count4 != 0) {
+                                    System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                                    foreach(var item in listFresher) {
+                                        System.Console.WriteLine(item);
+                                    }
+                                }else {
+                                    System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
+                                }
+                                break;
+                            default:
+                                System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
+                                break;
+                        }
+                        break;
                     case 4: 
                         Console.Clear();
                         System.Console.WriteLine("===============CÁC LOẠI NHÂN VIÊN=============");
@@ -160,6 +263,9 @@ namespace Do_an_OOP
                                 DateTime graDate = new DateTime(yearGra, monthGra, dayGra);
                                 Fresher newFresher = new Fresher(id, fullname, date, phone, email, choose4, graDate, graRank, graUni);
                                 manageEmployee.Add(newFresher);
+                                break;
+                            default: 
+                                System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
                                 break;
                         }
                         break;
@@ -212,10 +318,10 @@ namespace Do_an_OOP
                 int chooseNumber = int.Parse(Console.ReadLine());
                 switch (chooseNumber)
                 {
-                    case 2:
+                    case 1:
                         Console.Clear();
                         goto BEGIN;
-                    case 1:
+                    case 2:
                         System.Console.WriteLine("Thoát chương trình thành công");
                         break;
                     default:
@@ -245,6 +351,7 @@ namespace Do_an_OOP
             db.CheckEmail(email);
         }
         public static void Exit() {
+            Console.Clear();
             System.Console.WriteLine("Bạn có muốn thoát chương trình?");
             System.Console.WriteLine("1. Có");
             System.Console.WriteLine("2. Không");
