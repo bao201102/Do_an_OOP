@@ -5,7 +5,7 @@ namespace Do_an_OOP
 {
     class Program
     {
-        static void Add(string email)
+        static void AddEmail(string email)
         {
             if (!email.Contains('@')) 
             {
@@ -167,7 +167,7 @@ namespace Do_an_OOP
                         Console.Clear();
                         System.Console.Write("Nhập vào id của nhân viên: ");
                         string id1 = Console.ReadLine();
-                        manageEmployee.Edit(id1);
+                        db.Edit(id1);
                         break;
                     case 6:
                         System.Console.Write("Nhập vào id của nhân viên muốn xóa: ");
@@ -240,6 +240,9 @@ namespace Do_an_OOP
             phone = Console.ReadLine();
             System.Console.Write("Nhập vào email: ");
             email = Console.ReadLine();
+            Database db = new Database();
+            db.AddEmail(email);
+            db.CheckEmail(email);
         }
         public static void Exit() {
             System.Console.WriteLine("Bạn có muốn thoát chương trình?");
