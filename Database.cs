@@ -21,14 +21,17 @@ namespace Do_an_OOP
             adminAccounts.Add("user2", "456");
         }
 
-        public bool query4Login(string username, string password) {
-            foreach(KeyValuePair<string, string> entry in adminAccounts) {
-                if(username.Equals((string)entry.Key) && password.Equals((string)entry.Value)) {
+        public bool query4Login(string username, string password)
+        {
+            foreach (KeyValuePair<string, string> entry in adminAccounts)
+            {
+                if (username.Equals((string)entry.Key) && password.Equals((string)entry.Value))
+                {
                     return true;
                 }
             }
             return false;
-        }   
+        }
 
         public void Add(Employee emp)
         {
@@ -42,26 +45,35 @@ namespace Do_an_OOP
             }
             data.Add(emp);
         }
-        public void Remove(string id) {
+        public void Remove(string id)
+        {
             int count = 0;
-            foreach(var item in Data) {
-                if(item.Id == id) {
+            foreach (var item in Data)
+            {
+                if (item.Id == id)
+                {
                     count++;
                 }
             }
-            if(count != 0) {
+            if (count != 0)
+            {
                 System.Console.WriteLine("Xóa thành công");
                 data.RemoveAll(item => item.Id.Contains(id));
-            }else {
+            }
+            else
+            {
                 System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
             }
-            
+
         }
 
-        public void Edit(string id) {
+        public void Edit(string id)
+        {
             int count = 0;
-            foreach(Employee item in Data) {
-                if(item as Experience != null) {
+            foreach (Employee item in Data)
+            {
+                if (item as Experience != null)
+                {
                     Experience tempEmp = (Experience)item;
                     if (tempEmp.Id == id)
                     {
@@ -74,8 +86,9 @@ namespace Do_an_OOP
                         int chooseNumber = int.Parse(Console.ReadLine());
                         System.Console.WriteLine();
                         this.ChooseInfo(chooseNumber, tempEmp);
-                        switch(chooseNumber) {
-                            case 6: 
+                        switch (chooseNumber)
+                        {
+                            case 6:
                                 System.Console.Write("Nhập vào năm kinh nghiệm mới: ");
                                 int yearOfExp = int.Parse(Console.ReadLine());
                                 tempEmp.YearOfExp = yearOfExp;
@@ -91,7 +104,9 @@ namespace Do_an_OOP
                         System.Console.WriteLine("Cập nhật thành công");
                         System.Console.WriteLine("Sau khi cập nhật, thông tin nhân viên mới là: " + tempEmp);
                     }
-                }else if(item as Intern != null) {
+                }
+                else if (item as Intern != null)
+                {
                     Intern tempEmp = (Intern)item;
                     if (tempEmp.Id == id)
                     {
@@ -105,8 +120,9 @@ namespace Do_an_OOP
                         int chooseNumber = int.Parse(Console.ReadLine());
                         System.Console.WriteLine();
                         this.ChooseInfo(chooseNumber, tempEmp);
-                        switch(chooseNumber) {
-                            case 6: 
+                        switch (chooseNumber)
+                        {
+                            case 6:
                                 System.Console.Write("Nhập vào chuyên ngành mới: ");
                                 string majors = Console.ReadLine();
                                 tempEmp.Majors = majors;
@@ -125,7 +141,9 @@ namespace Do_an_OOP
                                 break;
                         }
                     }
-                }else if(item as Fresher != null) {
+                }
+                else if (item as Fresher != null)
+                {
                     Fresher tempEmp = (Fresher)item;
                     if (tempEmp.Id == id)
                     {
@@ -139,8 +157,9 @@ namespace Do_an_OOP
                         int chooseNumber = int.Parse(Console.ReadLine());
                         System.Console.WriteLine();
                         this.ChooseInfo(chooseNumber, tempEmp);
-                        switch(chooseNumber) {
-                            case 6: 
+                        switch (chooseNumber)
+                        {
+                            case 6:
                                 System.Console.Write("Nhập vào ngày tốt nghiệp mới");
                                 int dayGra = int.Parse(Console.ReadLine());
                                 System.Console.Write("Nhập vào tháng tốt nghiệp mới: ");
@@ -183,19 +202,25 @@ namespace Do_an_OOP
                 }
 
             }
-            if(count == 0) {
+            if (count == 0)
+            {
                 System.Console.WriteLine("Người dùng không tồn tại trong hệ thống. Vui lòng thử lại");
-            }else {
+            }
+            else
+            {
                 System.Console.WriteLine("Chỉnh sửa thành công");
             }
         }
-        public void ShowAllEmp() {
-            foreach(var item in Data) {
+        public void ShowAllEmp()
+        {
+            foreach (var item in Data)
+            {
                 System.Console.WriteLine(item);
             }
         }
 
-        public void EditInfoBasic() {
+        public void EditInfoBasic()
+        {
             System.Console.WriteLine("Bạn muốn chỉnh sửa:");
             System.Console.WriteLine("1. Họ tên");
             System.Console.WriteLine("2. Ngày sinh");
@@ -203,14 +228,16 @@ namespace Do_an_OOP
             System.Console.WriteLine("4. Email");
             System.Console.WriteLine("5. Loại nhân viên");
         }
-        public void ChooseInfo(int chooseNumber, Employee tempEmp) {
-            switch(chooseNumber) {
-                case 1: 
+        public void ChooseInfo(int chooseNumber, Employee tempEmp)
+        {
+            switch (chooseNumber)
+            {
+                case 1:
                     System.Console.Write("Nhập vào họ tên mới: ");
                     string fullname = Console.ReadLine();
                     tempEmp.Fullname = fullname;
                     break;
-                case 2: 
+                case 2:
                     System.Console.Write("Nhập vào ngày sinh mới: ");
                     int day = int.Parse(Console.ReadLine());
                     System.Console.Write("Nhập vào tháng sinh mới: ");
@@ -219,19 +246,19 @@ namespace Do_an_OOP
                     int year = int.Parse(Console.ReadLine());
                     tempEmp.Birthday = new DateTime(year, month, day);
                     break;
-                case 3: 
+                case 3:
                     System.Console.Write("Nhập vào số điện thoại mới: ");
                     string phone = Console.ReadLine();
                     tempEmp.Phone = phone;
                     break;
-                case 4: 
+                case 4:
                     System.Console.Write("Nhập vào email mới: ");
                     string email = Console.ReadLine();
                     tempEmp.Email = email;
                     this.AddEmail(email);
                     this.CheckEmail(email);
                     break;
-                case 5: 
+                case 5:
                     System.Console.Write("Nhập vào loại nhân viên mới: ");
                     byte employee_type = byte.Parse(Console.ReadLine());
                     tempEmp.Employee_type = employee_type;
@@ -240,14 +267,15 @@ namespace Do_an_OOP
         }
         public void AddEmail(string email)
         {
-            if (!email.Contains('@')) 
+            if (!email.Contains('@'))
             {
                 Exception e = new EmailException();
                 throw e;
             }
             else System.Console.WriteLine("Email hợp lệ");
         }
-        public void CheckEmail(string email) {
+        public void CheckEmail(string email)
+        {
             try
             {
                 AddEmail(email);

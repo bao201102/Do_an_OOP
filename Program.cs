@@ -7,7 +7,7 @@ namespace Do_an_OOP
     {
         static void AddEmail(string email)
         {
-            if (!email.Contains('@')) 
+            if (!email.Contains('@'))
             {
                 Exception e = new EmailException();
                 throw e;
@@ -16,23 +16,23 @@ namespace Do_an_OOP
         }
         public static void EmpType(byte s)
         {
-            if (s < 0 || s > 2) 
+            if (s < 0 || s > 2)
             {
                 Exception e = new EmployeeTypeException();
                 throw e;
             }
-        } 
+        }
         public static void GraRank(byte s)
         {
-            if (s < 0 || s > 3) 
+            if (s < 0 || s > 3)
             {
                 Exception e = new GraduateRankException();
                 throw e;
             }
-        } 
+        }
         public static void UserPhone(string s)
         {
-            if (s.Length > 10) 
+            if (s.Length > 10)
             {
                 Exception e = new NumberException();
                 throw e;
@@ -40,56 +40,26 @@ namespace Do_an_OOP
         }
         static void Main(string[] args)
         {
-            // ManageEmployee manageEmployee1 = new ManageEmployee();
-            // Database db3 = new Database();
-            // db3.ShowAllEmp();
-            // db3.Add(new Experience("09", "J", new DateTime(2002, 8, 31), "0977xxx", "@", 0, 4, "PHP"));
-            // db3.ShowAllEmp();
-            // Console.OutputEncoding = System.Text.Encoding.UTF8;
-            // Console.Clear();
-            // //Console.SetWindowSize(180, 40);
-            // Console.OutputEncoding = Encoding.Unicode;
-            // Console.InputEncoding = Encoding.Unicode;
-            // Database db = new Database();
-            // string username = "admin";
-            // string password = "123";
-            // if(db.query4Login(username, password)) {
-            //     System.Console.WriteLine("Đăng nhập thành công");
-            //     ManageEmployee manageEmployee = new ManageEmployee();
-            //     manageEmployee.ShowAllEmp();
-            //     manageEmployee.ShowEmpSalary(manageEmployee.FindByType(2));
-            //     manageEmployee.ShowEmpSalary(manageEmployee.FindByType(0));
-            //     manageEmployee.Edit();
-            // }else {
-            //     System.Console.WriteLine("Đăng nhập không thành công");
-            // }
-            /*string email = "abca@dada";
-            try
-            {
-                AddEmail(email);
-            }
-            catch (EmailException e)
-            {
-                System.Console.WriteLine(e.Message);
-            }*/
             Console.Clear();
             Console.OutputEncoding = System.Text.Encoding.UTF8;
-            
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+
             System.Console.WriteLine("================ĐỒ ÁN MÔN HỌC LẬP TRÌNH HƯỚNG ĐỐI TƯỢNG===============");
             System.Console.WriteLine("                       ĐỀ TÀI: QUẢN LÍ NHÂN VIÊN ");
             System.Console.WriteLine("                 NHÓM THỰC HIỆN: ĐẠT, BẢO, DẬU, THIỆN");
             System.Console.WriteLine("                         ************************                   ");
-            BEGIN:   
-            System.Console.WriteLine("==========================ĐĂNG NHẬP VÀO HỆ THỐNG======================="); 
+        BEGIN:
+            System.Console.WriteLine("==========================ĐĂNG NHẬP VÀO HỆ THỐNG=======================");
             System.Console.Write("Nhập vào tài khoản: ");
             string username = Console.ReadLine();
             System.Console.Write("Nhập vào mật khẩu: ");
             string password = Console.ReadLine();
             Database db = new Database();
-            if(db.query4Login(username, password)) {
+            if (db.query4Login(username, password))
+            {
                 Console.Clear();
                 System.Console.WriteLine("Chào mừng trở lại, " + username);
-                BEGIN2:
+            BEGIN2:
                 ManageEmployee manageEmployee = new ManageEmployee();
                 System.Console.WriteLine("----------------PHẦN MỀM QUẢN LÍ NHÂN VIÊN--------------");
                 System.Console.WriteLine("Các chức năng: ");
@@ -104,7 +74,8 @@ namespace Do_an_OOP
                 int chooseNumber = int.Parse(Console.ReadLine());
                 string id = ""; string fullname = ""; int day = 0; int month = 0; int year = 0; DateTime date = new DateTime();
                 string phone = ""; string email = "";
-                switch (chooseNumber) {
+                switch (chooseNumber)
+                {
                     case 0:
                         Console.Clear();
                         System.Console.WriteLine("___________________DANH SÁCH NHÂN VIÊN__________________");
@@ -122,7 +93,8 @@ namespace Do_an_OOP
                         List<Employee> listEmp = new List<Employee>();
                         listEmp = manageEmployee.FindByType(choose1);
                         System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
-                        foreach(var item in listEmp) {
+                        foreach (var item in listEmp)
+                        {
                             System.Console.WriteLine(item);
                         }
                         break;
@@ -132,10 +104,13 @@ namespace Do_an_OOP
                         id = Console.ReadLine();
                         Employee emp = new Employee();
                         emp = manageEmployee.FindById(id);
-                        if(emp.Id != null) {
+                        if (emp.Id != null)
+                        {
                             System.Console.WriteLine("Nhân viên bạn cần tìm là: ");
                             System.Console.WriteLine(emp);
-                        }else {
+                        }
+                        else
+                        {
                             System.Console.WriteLine("Người dùng không tồn tại trong hệ thống");
                         }
                         break;
@@ -148,7 +123,8 @@ namespace Do_an_OOP
                         System.Console.WriteLine("");
                         System.Console.Write("Nhập vào loại nhân viên muốn tìm: ");
                         int chooseNum = int.Parse(Console.ReadLine());
-                        switch(chooseNum) {
+                        switch (chooseNum)
+                        {
                             case 0:
                                 System.Console.WriteLine("1. Tìm theo số năm kinh nghiệm");
                                 System.Console.WriteLine("2. Tìm theo kĩ năng chuyên môn");
@@ -161,17 +137,23 @@ namespace Do_an_OOP
                                         int yearOfExp = int.Parse(Console.ReadLine());
                                         List<Employee> listExp = manageEmployee.FindByExp(yearOfExp);
                                         int count1 = 0;
-                                        foreach(var item in listExp) {
-                                            if(item != null) {
+                                        foreach (var item in listExp)
+                                        {
+                                            if (item != null)
+                                            {
                                                 count1++;
                                             }
                                         }
-                                        if(count1 != 0) {
+                                        if (count1 != 0)
+                                        {
                                             System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
-                                            foreach(var item in listExp) {
+                                            foreach (var item in listExp)
+                                            {
                                                 System.Console.WriteLine(item);
                                             }
-                                        }else {
+                                        }
+                                        else
+                                        {
                                             System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
                                         }
                                         break;
@@ -180,17 +162,23 @@ namespace Do_an_OOP
                                         string proSkills = Console.ReadLine();
                                         List<Employee> listExp1 = manageEmployee.FindBySkills(proSkills);
                                         int count2 = 0;
-                                        foreach(var item in listExp1) {
-                                            if(item != null) {
+                                        foreach (var item in listExp1)
+                                        {
+                                            if (item != null)
+                                            {
                                                 count2++;
                                             }
                                         }
-                                        if(count2 != 0) {
+                                        if (count2 != 0)
+                                        {
                                             System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
-                                            foreach(var item in listExp1) {
+                                            foreach (var item in listExp1)
+                                            {
                                                 System.Console.WriteLine(item);
                                             }
-                                        }else {
+                                        }
+                                        else
+                                        {
                                             System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
                                         }
                                         break;
@@ -204,36 +192,48 @@ namespace Do_an_OOP
                                 string major = Console.ReadLine();
                                 List<Employee> listIntern = manageEmployee.FindByMajor(major);
                                 int count3 = 0;
-                                foreach(var item in listIntern) {
-                                    if(item != null) {
+                                foreach (var item in listIntern)
+                                {
+                                    if (item != null)
+                                    {
                                         count3++;
                                     }
                                 }
-                                if(count3 != 0) {
+                                if (count3 != 0)
+                                {
                                     System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
-                                    foreach(var item in listIntern) {
+                                    foreach (var item in listIntern)
+                                    {
                                         System.Console.WriteLine(item);
                                     }
-                                }else {
+                                }
+                                else
+                                {
                                     System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
                                 }
                                 break;
                             case 2:
                                 System.Console.Write("Nhập vào hạng tốt nghiệp: ");
                                 byte graRank = byte.Parse(Console.ReadLine());
-                                 List<Employee> listFresher = manageEmployee.FindByGraRank(graRank);
+                                List<Employee> listFresher = manageEmployee.FindByGraRank(graRank);
                                 int count4 = 0;
-                                foreach(var item in listFresher) {
-                                    if(item != null) {
+                                foreach (var item in listFresher)
+                                {
+                                    if (item != null)
+                                    {
                                         count4++;
                                     }
                                 }
-                                if(count4 != 0) {
+                                if (count4 != 0)
+                                {
                                     System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
-                                    foreach(var item in listFresher) {
+                                    foreach (var item in listFresher)
+                                    {
                                         System.Console.WriteLine(item);
                                     }
-                                }else {
+                                }
+                                else
+                                {
                                     System.Console.WriteLine("Không tìm thấy nhân viên thỏa mãn. Vui lòng thử lại");
                                 }
                                 break;
@@ -242,7 +242,7 @@ namespace Do_an_OOP
                                 break;
                         }
                         break;
-                    case 4: 
+                    case 4:
                         Console.Clear();
                         System.Console.WriteLine("===============CÁC LOẠI NHÂN VIÊN=============");
                         System.Console.WriteLine("0. Experience");
@@ -251,7 +251,8 @@ namespace Do_an_OOP
                         System.Console.WriteLine("");
                         System.Console.Write("Nhập vào loại nhân viên muốn thêm: ");
                         byte choose4 = byte.Parse(Console.ReadLine());
-                        switch(choose4) {
+                        switch (choose4)
+                        {
                             case 0:
                                 InputInfoBasic(ref id, ref fullname, ref day, ref month, ref year, ref date, ref phone, ref email);
                                 System.Console.Write("Nhập vào năm kinh nghiệm: ");
@@ -288,7 +289,7 @@ namespace Do_an_OOP
                                 Fresher newFresher = new Fresher(id, fullname, date, phone, email, choose4, graDate, graRank, graUni);
                                 db.Add(newFresher);
                                 break;
-                            default: 
+                            default:
                                 System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
                                 break;
                         }
@@ -308,17 +309,19 @@ namespace Do_an_OOP
                         System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 6");
                         goto BACK;
                 }
-                BACK:
+            BACK:
                 System.Console.WriteLine("Bạn có muốn quay lại màn hình chính");
                 System.Console.WriteLine("1. Có");
                 System.Console.WriteLine("2. Không");
                 System.Console.Write("Nhập lựa chọn của bạn: ");
                 int choose = int.Parse(Console.ReadLine());
-                if(choose == 1) {
+                if (choose == 1)
+                {
                     Console.Clear();
                     goto BEGIN2;
                 }
-                else {
+                else
+                {
                     Exit();
                     int chooseNum = int.Parse(Console.ReadLine());
                     switch (chooseNum)
@@ -333,8 +336,10 @@ namespace Do_an_OOP
                             break;
                     }
                 }
-                
-            }else {
+
+            }
+            else
+            {
                 System.Console.WriteLine("Tài khoản hoặc mật khẩu không đúng. Bạn có muốn tiếp tục?");
                 System.Console.WriteLine("Yes (Ấn phím 1)");
                 System.Console.WriteLine("No (Ấn phím 2)");
@@ -353,8 +358,9 @@ namespace Do_an_OOP
                 }
             }
 
-        } 
-        public static void InputInfoBasic(ref string id, ref string fullname, ref int day, ref int month, ref int year, ref DateTime date, ref string phone, ref string email) {
+        }
+        public static void InputInfoBasic(ref string id, ref string fullname, ref int day, ref int month, ref int year, ref DateTime date, ref string phone, ref string email)
+        {
             System.Console.Write("Nhập vào id: ");
             id = Console.ReadLine();
             System.Console.Write("Nhập vào họ tên: ");
@@ -374,7 +380,8 @@ namespace Do_an_OOP
             db.AddEmail(email);
             db.CheckEmail(email);
         }
-        public static void Exit() {
+        public static void Exit()
+        {
             Console.Clear();
             System.Console.WriteLine("Bạn có muốn thoát chương trình?");
             System.Console.WriteLine("1. Có");
