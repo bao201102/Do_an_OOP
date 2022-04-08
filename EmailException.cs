@@ -8,13 +8,13 @@ namespace Do_an_OOP
         {
 
         }
-        public static void EmailEx(string s)
+        /*public static void EmailEx(string s)
         {
             if (!s.Contains('@')) 
             {
                 Exception e = new EmailException();
                 throw e;
             }
-        } 
+        } */
     }
 }

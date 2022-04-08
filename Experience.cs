@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections.Generic;
 namespace Do_an_OOP
@@ -21,10 +22,15 @@ namespace Do_an_OOP
             this.yearOfExp = yearOfExp;
             this.proSkills = proSkills;
         }
+        public double CalcSalary() {
+            return yearOfExp * 3000000;
+        }
 
         public override string ToString()
         {
-            return base.ToString() + $", Year of experience: {yearOfExp}, Pro skills: {proSkills}";
+            return base.ToString() + $", Year of experience: {yearOfExp}, Pro skills: {proSkills}, Salary: " + this.CalcSalary();
         }
+
+        
     }
 }

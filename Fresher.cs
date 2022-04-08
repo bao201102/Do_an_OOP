@@ -14,6 +14,9 @@ namespace Do_an_OOP
         private string graUni;
 
         public byte GraRank { get { return graRank; } set { graRank = value; } }
+        public DateTime GraDate { get { return graDate; } set { graDate = value; }}
+        public string GraRankName { get { return graRankName; } set { graRankName = value; }}
+        public string GraUni { get { return graUni; } set { graUni = value; }}
 
         public Fresher(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type, DateTime graDate, byte graRank, string graUni)
         {

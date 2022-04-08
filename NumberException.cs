@@ -9,13 +9,5 @@ namespace Do_an_OOP
         {
             
         }
-        public static void UserPhone(string s)
-        {
-            if (s.Length > 10) 
-            {
-                Exception e = new NumberException();
-                throw e;
-            }
-        }
     }
 }
