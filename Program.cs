@@ -1,20 +1,72 @@
 ﻿using System;
 using System.Text;
+using System.Threading;
 using System.Collections.Generic;
 namespace Do_an_OOP
 {
     class Program
     {
-        static void AddEmail(string email)
+        public static bool ThrowUserPhoneEx(string phone)
+        {
+            try
+            {
+                CheckUserPhone(phone);
+            }
+            catch (NumberPhoneException e)
+            {
+                System.Console.WriteLine(e.Message);
+                return true;
+            }
+            return false;
+        }
+        public static bool ThrowGraRankEx(byte graRank)
+        {
+            try
+            {
+                CheckGraRank(graRank);
+            }
+            catch (GraduateRankException e)
+            {
+                System.Console.WriteLine(e.Message);
+                return true;
+            }
+            return false;
+        }
+        public static bool ThrowEmpTypeEx(byte type)
+        {
+            try
+            {
+                CheckEmpType(type);
+            }
+            catch (EmployeeTypeException e)
+            {
+                System.Console.WriteLine(e.Message);
+                return true;
+            }
+            return false;
+        }
+        public static bool ThrowEmailEx(string email)
+        {
+            try
+            {
+                CheckEmail(email);
+            }
+            catch (EmailException e)
+            {
+                System.Console.WriteLine(e.Message);
+                return true;
+            }
+            return false;
+        }
+        public static void CheckEmail(string email)
         {
             if (!email.Contains('@'))
             {
                 Exception e = new EmailException();
                 throw e;
             }
-            else System.Console.WriteLine("Email hợp lệ");
         }
-        public static void EmpType(byte s)
+        public static void CheckEmpType(byte s)
         {
             if (s < 0 || s > 2)
             {
@@ -22,7 +74,7 @@ namespace Do_an_OOP
                 throw e;
             }
         }
-        public static void GraRank(byte s)
+        public static void CheckGraRank(byte s)
         {
             if (s < 0 || s > 3)
             {
@@ -30,11 +82,11 @@ namespace Do_an_OOP
                 throw e;
             }
         }
-        public static void UserPhone(string s)
+        public static void CheckUserPhone(string s)
         {
             if (s.Length > 10)
             {
-                Exception e = new NumberException();
+                Exception e = new NumberPhoneException();
                 throw e;
             }
         }
@@ -92,7 +144,7 @@ namespace Do_an_OOP
                         byte choose1 = byte.Parse(Console.ReadLine());
                         List<Employee> listEmp = new List<Employee>();
                         listEmp = manageEmployee.FindByType(choose1);
-                        System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                        System.Console.WriteLine("Danh sách nhân viên: ");
                         foreach (var item in listEmp)
                         {
                             System.Console.WriteLine(item);
@@ -146,7 +198,7 @@ namespace Do_an_OOP
                                         }
                                         if (count1 != 0)
                                         {
-                                            System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                                            System.Console.WriteLine("Danh sách nhân viên: ");
                                             foreach (var item in listExp)
                                             {
                                                 System.Console.WriteLine(item);
@@ -171,7 +223,7 @@ namespace Do_an_OOP
                                         }
                                         if (count2 != 0)
                                         {
-                                            System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                                            System.Console.WriteLine("Danh sách nhân viên: ");
                                             foreach (var item in listExp1)
                                             {
                                                 System.Console.WriteLine(item);
@@ -201,7 +253,7 @@ namespace Do_an_OOP
                                 }
                                 if (count3 != 0)
                                 {
-                                    System.Console.WriteLine("Danh sách nhân viên thỏa mãn: ");
+                                    System.Console.WriteLine("Danh sách nhân viên: ");
                                     foreach (var item in listIntern)
                                     {
                                         System.Console.WriteLine(item);
@@ -251,6 +303,14 @@ namespace Do_an_OOP
                         System.Console.WriteLine("");
                         System.Console.Write("Nhập vào loại nhân viên muốn thêm: ");
                         byte choose4 = byte.Parse(Console.ReadLine());
+                        if (ThrowEmpTypeEx(choose4))
+                        {
+                            System.Console.WriteLine("Bạn sẽ quay trở lại màn hình chính trong 5s");
+                            Thread.Sleep(5000);
+                            Console.Clear();
+                            goto BEGIN2;
+                        }
+
                         switch (choose4)
                         {
                             case 0:
@@ -283,6 +343,13 @@ namespace Do_an_OOP
                                 int yearGra = int.Parse(Console.ReadLine());
                                 System.Console.Write("Nhập vào hạng tốt nghiệp: ");
                                 byte graRank = byte.Parse(Console.ReadLine());
+                                if (ThrowGraRankEx(graRank))
+                                {
+                                    System.Console.WriteLine("Bạn sẽ quay trở lại màn hình chính trong 5s");
+                                    Thread.Sleep(5000);
+                                    Console.Clear();
+                                    goto BEGIN2;
+                                }
                                 System.Console.Write("Nhập vào trường tốt nghiệp: ");
                                 string graUni = Console.ReadLine();
                                 DateTime graDate = new DateTime(yearGra, monthGra, dayGra);
@@ -290,7 +357,6 @@ namespace Do_an_OOP
                                 db.Add(newFresher);
                                 break;
                             default:
-                                System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
                                 break;
                         }
                         break;
@@ -357,8 +423,8 @@ namespace Do_an_OOP
                         break;
                 }
             }
-
         }
+
         public static void InputInfoBasic(ref string id, ref string fullname, ref int day, ref int month, ref int year, ref DateTime date, ref string phone, ref string email)
         {
             System.Console.Write("Nhập vào id: ");
@@ -372,14 +438,24 @@ namespace Do_an_OOP
             System.Console.Write("Nhập vào năm sinh: ");
             year = int.Parse(Console.ReadLine());
             date = new DateTime(year, month, day);
+
+        Phone:
             System.Console.Write("Nhập vào số điện thoại: ");
             phone = Console.ReadLine();
+            if (ThrowUserPhoneEx(phone))
+            {
+                goto Phone;
+            }
+
+        Email:
             System.Console.Write("Nhập vào email: ");
             email = Console.ReadLine();
-            Database db = new Database();
-            db.AddEmail(email);
-            db.CheckEmail(email);
+            if (ThrowEmailEx(email))
+            {
+                goto Email;
+            }
         }
+
         public static void Exit()
         {
             Console.Clear();

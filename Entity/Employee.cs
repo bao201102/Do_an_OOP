@@ -26,16 +26,6 @@ namespace Do_an_OOP
 
         }
 
-        public Employee(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type)
-        {
-            this.id = id;
-            this.fullname = fullname;
-            this.birthday = birthday;
-            this.phone = phone;
-            this.email = email;
-            this.employee_type = employee_type;
-        }
-
         public override string ToString()
         {
             return GetType().ToString().Remove(0, 10) + $"\tId: {id}, Fullname: {fullname}, Birthday: {birthday.ToShortDateString()}, Phone: {phone}, Email: {email}";

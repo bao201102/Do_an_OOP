@@ -45,6 +45,7 @@ namespace Do_an_OOP
             }
             data.Add(emp);
         }
+
         public void Remove(string id)
         {
             int count = 0;
@@ -200,7 +201,6 @@ namespace Do_an_OOP
                         }
                     }
                 }
-
             }
             if (count == 0)
             {
@@ -211,6 +211,7 @@ namespace Do_an_OOP
                 System.Console.WriteLine("Chỉnh sửa thành công");
             }
         }
+
         public void ShowAllEmp()
         {
             foreach (var item in Data)
@@ -228,6 +229,7 @@ namespace Do_an_OOP
             System.Console.WriteLine("4. Email");
             System.Console.WriteLine("5. Loại nhân viên");
         }
+
         public void ChooseInfo(int chooseNumber, Employee tempEmp)
         {
             switch (chooseNumber)
@@ -252,37 +254,20 @@ namespace Do_an_OOP
                     tempEmp.Phone = phone;
                     break;
                 case 4:
+                Email:
                     System.Console.Write("Nhập vào email mới: ");
                     string email = Console.ReadLine();
                     tempEmp.Email = email;
-                    this.AddEmail(email);
-                    this.CheckEmail(email);
+                    if (Program.ThrowEmailEx(email))
+                    {
+                        goto Email;
+                    }
                     break;
                 case 5:
                     System.Console.Write("Nhập vào loại nhân viên mới: ");
                     byte employee_type = byte.Parse(Console.ReadLine());
                     tempEmp.Employee_type = employee_type;
                     break;
-            }
-        }
-        public void AddEmail(string email)
-        {
-            if (!email.Contains('@'))
-            {
-                Exception e = new EmailException();
-                throw e;
-            }
-            else System.Console.WriteLine("Email hợp lệ");
-        }
-        public void CheckEmail(string email)
-        {
-            try
-            {
-                AddEmail(email);
-            }
-            catch (EmailException e)
-            {
-                System.Console.WriteLine(e.Message);
             }
         }
     }

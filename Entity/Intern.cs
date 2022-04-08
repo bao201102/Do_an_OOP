@@ -11,6 +11,7 @@ namespace Do_an_OOP
         public string Majors { get { return majors; } set { majors = value; } }
         public int Semester { get { return semester; } set { semester = value; } }
         public string University { get { return university; } set { university = value; } }
+
         public Intern(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type, string majors, int semester, string university)
         {
             base.id = id;

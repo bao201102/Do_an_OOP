@@ -5,49 +5,13 @@ namespace Do_an_OOP
 {
     public class ManageEmployee
     {
-        Database db = new Database();
+        Database db;
 
         public ManageEmployee()
         {
+            db = new Database();
+        }
 
-        }
-        public void Add(Employee e) {
-            db.Add(e);
-        }
-        // public void ShowAllEmp()
-        // {
-        //     foreach (Employee item in db.Data)
-        //     {
-        //         Console.WriteLine(item);
-        //     }
-        // }
-        public void ShowEmpInfo(List<Employee> listEmp)
-        {
-            foreach (Employee item in listEmp)
-            {
-                Console.WriteLine(item);
-            }
-       
-        }
-        public void ShowEmpSalary(List<Employee> listEmp)
-        {
-            foreach (Employee item in listEmp)
-            {
-                Console.WriteLine(item.ShowSalary());
-            }
-        }
-        // public List<Employee> FindId(string id)
-        // {
-        //     List<Employee> listEmp = new List<Employee>();
-        //     foreach (Employee item in db.Data)
-        //     {
-        //         if (item.Id.Contains(id))
-        //         {
-        //             listEmp.Add(item);
-        //         }
-        //     }
-        //     return listEmp;
-        // }
         public Employee FindById(string id)
         {
             Employee emp = new Employee();
@@ -60,6 +24,7 @@ namespace Do_an_OOP
             }
             return emp;
         }
+
         public List<Employee> FindByType(byte type)
         {
             List<Employee> listEmp = new List<Employee>();
@@ -72,6 +37,7 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
+
         public List<Employee> FindByExp(int yearOfExp)
         {
             List<Employee> listEmp = new List<Employee>();
@@ -88,6 +54,7 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
+
         public List<Employee> FindBySkills(string proSkill)
         {
             List<Employee> listEmp = new List<Employee>();
@@ -104,6 +71,7 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
+
         public List<Employee> FindByGraRank(byte graRank)
         {
             List<Employee> listEmp = new List<Employee>();
@@ -120,6 +88,7 @@ namespace Do_an_OOP
             }
             return listEmp;
         }
+
         public List<Employee> FindByMajor(string major)
         {
             List<Employee> listEmp = new List<Employee>();
