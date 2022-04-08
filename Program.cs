@@ -270,7 +270,7 @@ namespace Do_an_OOP
                                 System.Console.Write("Nhập vào trường đại học: ");
                                 string university = Console.ReadLine();
                                 Intern newIntern = new Intern(id, fullname, date, phone, email, choose4, majors, semester, university);
-                                manageEmployee.Add(newIntern);
+                                db.Add(newIntern);
                                 break;
                             case 2:
                                 InputInfoBasic(ref id, ref fullname, ref day, ref month, ref year, ref date, ref phone, ref email);
@@ -286,7 +286,7 @@ namespace Do_an_OOP
                                 string graUni = Console.ReadLine();
                                 DateTime graDate = new DateTime(yearGra, monthGra, dayGra);
                                 Fresher newFresher = new Fresher(id, fullname, date, phone, email, choose4, graDate, graRank, graUni);
-                                manageEmployee.Add(newFresher);
+                                db.Add(newFresher);
                                 break;
                             default: 
                                 System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 2");
