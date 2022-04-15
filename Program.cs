@@ -122,6 +122,7 @@ namespace Do_an_OOP
                 System.Console.WriteLine("4. Thêm nhân viên");
                 System.Console.WriteLine("5. Cập nhật thông tin nhân viên");
                 System.Console.WriteLine("6. Xóa nhân viên theo Id");
+                System.Console.WriteLine("7. Đăng xuất");
                 System.Console.Write("Nhập vào lựa chọn của bạn: ");
                 int chooseNumber = int.Parse(Console.ReadLine());
                 string id = ""; string fullname = ""; int day = 0; int month = 0; int year = 0; DateTime date = new DateTime();
@@ -265,7 +266,7 @@ namespace Do_an_OOP
                                 }
                                 break;
                             case 2:
-                                System.Console.Write("Nhập vào hạng tốt nghiệp: ");
+                                System.Console.Write("Nhập vào hạng tốt nghiệp (0. Trung bình, 1. Khá, 2. Giỏi, 3. Xuất sắc): ");
                                 byte graRank = byte.Parse(Console.ReadLine());
                                 List<Employee> listFresher = manageEmployee.FindByGraRank(graRank);
                                 int count4 = 0;
@@ -321,6 +322,7 @@ namespace Do_an_OOP
                                 string proSkills = Console.ReadLine();
                                 Experience newExp = new Experience(id, fullname, date, phone, email, choose4, yearOfExp, proSkills);
                                 db.Add(newExp);
+                                System.Console.WriteLine("Thêm thành công");
                                 break;
                             case 1:
                                 InputInfoBasic(ref id, ref fullname, ref day, ref month, ref year, ref date, ref phone, ref email);
@@ -332,6 +334,7 @@ namespace Do_an_OOP
                                 string university = Console.ReadLine();
                                 Intern newIntern = new Intern(id, fullname, date, phone, email, choose4, majors, semester, university);
                                 db.Add(newIntern);
+                                System.Console.WriteLine("Thêm thành công");
                                 break;
                             case 2:
                                 InputInfoBasic(ref id, ref fullname, ref day, ref month, ref year, ref date, ref phone, ref email);
@@ -355,6 +358,7 @@ namespace Do_an_OOP
                                 DateTime graDate = new DateTime(yearGra, monthGra, dayGra);
                                 Fresher newFresher = new Fresher(id, fullname, date, phone, email, choose4, graDate, graRank, graUni);
                                 db.Add(newFresher);
+                                System.Console.WriteLine("Thêm thành công");
                                 break;
                             default:
                                 break;
@@ -370,6 +374,22 @@ namespace Do_an_OOP
                         System.Console.Write("Nhập vào id của nhân viên muốn xóa: ");
                         string idDel = Console.ReadLine();
                         db.Remove(idDel);
+                        break;
+                    case 7:
+                        Console.Clear();
+                        System.Console.WriteLine("Bạn có muốn đăng xuất?");
+                        System.Console.WriteLine("1. Có");
+                        System.Console.WriteLine("2. Không");
+                        System.Console.Write("Nhập vào lựa chọn của bạn: ");
+                        int chooseSignOut = int.Parse(Console.ReadLine());
+                        switch (chooseSignOut) {
+                            case 1:
+                                Console.Clear();
+                                goto BEGIN;
+                            case 2:
+                                Console.Clear();
+                                goto BACK;
+                        }
                         break;
                     default:
                         System.Console.WriteLine("Vui lòng nhập lựa chọn từ 0 -> 6");
