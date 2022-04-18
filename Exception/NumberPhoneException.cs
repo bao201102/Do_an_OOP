@@ -6,7 +6,7 @@ namespace Do_an_OOP
         const string errorNumber = "Số điện thoại quá dài";
         public NumberPhoneException() : base(errorNumber)
         {
-            
+
         }
     }
 }

@@ -14,9 +14,9 @@ namespace Do_an_OOP
         private string graUni;
 
         public byte GraRank { get { return graRank; } set { graRank = value; } }
-        public DateTime GraDate { get { return graDate; } set { graDate = value; }}
-        public string GraRankName { get { return graRankName; } set { graRankName = value; }}
-        public string GraUni { get { return graUni; } set { graUni = value; }}
+        public DateTime GraDate { get { return graDate; } set { graDate = value; }  }
+        public string GraRankName { get { return graRankName; } set { graRankName = value; }  }
+        public string GraUni { get { return graUni; } set { graUni = value; }  }
 
         public Fresher(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type, DateTime graDate, byte graRank, string graUni)
         {
@@ -50,7 +50,7 @@ namespace Do_an_OOP
         }
         public override string ToString()
         {
-            return base.ToString().Insert(8, "\t") + $", Graduate Date: {graDate.ToShortDateString()}, Rank: {graRankName}, University: {graUni}";
+            return base.ToString().Insert(8, "\t") + $", Graduate Date: {graDate.ToShortDateString()}, Rank: {graRankName}, University: {graUni}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
         }
 
         public double CalcSalary()
@@ -60,10 +60,6 @@ namespace Do_an_OOP
                 return 8000000 + 250000 * (graRank / 2);
             }
             return 800000;
-        }
-        public override string ShowSalary()
-        {
-            return GetType().ToString().Remove(0, 10) + $"\tId: {id}, Fullname: {fullname}, Rank: {graRankName}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
         }
     }
 }

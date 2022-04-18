@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 namespace Do_an_OOP
 {
-    public class Experience : Employee
+    public class Experience : Employee, IEmployee
 
     {
         private int yearOfExp;
@@ -22,15 +22,15 @@ namespace Do_an_OOP
             this.yearOfExp = yearOfExp;
             this.proSkills = proSkills;
         }
-        public double CalcSalary() {
+        public double CalcSalary()
+       
+        {
             return yearOfExp * 3000000;
         }
 
         public override string ToString()
         {
-            return base.ToString() + $", Year of experience: {yearOfExp}, Pro skills: {proSkills}, Salary: " + this.CalcSalary();
+            return base.ToString() + $", Year of experience: {yearOfExp}, Pro skills: {proSkills}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
         }
-
-        
     }
 }
