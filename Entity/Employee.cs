@@ -11,7 +11,6 @@ namespace Do_an_OOP
         protected string phone;
         protected string email;
         protected byte employee_type;
-        protected int employee_count;
 
         public string Id { get { return id; } set { id = value; } }
         public string Fullname { get { return fullname; } set { fullname = value; } }
