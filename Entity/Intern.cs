@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Do_an_OOP
 {
-    public class Intern : Employee
+    public class Intern : Employee, IEmployee
     {
         private string majors;
         private int semester;
@@ -26,7 +26,11 @@ namespace Do_an_OOP
         }
         public override string ToString()
         {
-            return base.ToString().Insert(7, "\t") + $", Majors: {majors}, Semester: {semester}, University: {university}";
+            return base.ToString().Insert(7, "\t") + $", Majors: {majors}, Semester: {semester}, University: {university}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
+        }
+        public double CalcSalary()
+        {
+            return 3000000 * 26 * 0.08;
         }
     }
 }

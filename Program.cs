@@ -382,7 +382,8 @@ namespace Do_an_OOP
                         System.Console.WriteLine("2. Không");
                         System.Console.Write("Nhập vào lựa chọn của bạn: ");
                         int chooseSignOut = int.Parse(Console.ReadLine());
-                        switch (chooseSignOut) {
+                        switch (chooseSignOut)
+                        {
                             case 1:
                                 Console.Clear();
                                 goto BEGIN;
