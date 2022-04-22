@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Do_an_OOP
@@ -12,6 +12,11 @@ namespace Do_an_OOP
         public int Semester { get { return semester; } set { semester = value; } }
         public string University { get { return university; } set { university = value; } }
 
+        public Intern()
+        {
+
+        }
+
         public Intern(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type, string majors, int semester, string university)
         {
             base.id = id;
@@ -24,13 +29,20 @@ namespace Do_an_OOP
             this.semester = semester;
             this.university = university;
         }
+
         public override string ToString()
         {
-            return base.ToString().Insert(7, "\t") + $", Majors: {majors}, Semester: {semester}, University: {university}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
+            return base.ToString().Insert(7, "\t") + $", Majors: {majors}, Semester: {semester}, University: {university}";
         }
+
         public double CalcSalary()
         {
-            return 3000000 * 26 * 0.08;
+            return 3000000 + 26 * 10000;
+        }
+
+        public override string ShowSalary()
+        {
+            return GetType().ToString().Remove(0, 10) + $"\t\tId: {id}, Fullname: {fullname}, Work days: 26, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
         }
     }
 }
