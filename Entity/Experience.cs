@@ -1,4 +1,4 @@
-
+﻿
 using System;
 using System.Collections.Generic;
 namespace Do_an_OOP
@@ -11,6 +11,13 @@ namespace Do_an_OOP
 
         public int YearOfExp { get { return yearOfExp; } set { yearOfExp = value; } }
         public string ProSkills { get { return proSkills; } set { proSkills = value; } }
+
+
+        public Experience()
+        {
+
+        }
+
         public Experience(string id, string fullname, DateTime birthday, string phone, string email, byte employee_type, int yearOfExp, string proSkills)
         {
             base.id = id;
@@ -22,15 +29,20 @@ namespace Do_an_OOP
             this.yearOfExp = yearOfExp;
             this.proSkills = proSkills;
         }
-        public double CalcSalary()
-       
-        {
-            return yearOfExp * 3000000;
-        }
 
         public override string ToString()
         {
-            return base.ToString() + $", Year of experience: {yearOfExp}, Pro skills: {proSkills}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
+            return base.ToString() + $", Year of experience: {yearOfExp}, Pro skills: {proSkills}";
+        }
+
+        public double CalcSalary()
+        {
+            return 15000000 + yearOfExp * 100000;
+        }
+
+        public override string ShowSalary()
+        {
+            return GetType().ToString().Remove(0, 10) + $"\tId: {id}, Fullname: {fullname}, Year of experience: {yearOfExp}, Salary: {String.Format("{0:0,0 vnđ}", CalcSalary())}";
         }
     }
 }
