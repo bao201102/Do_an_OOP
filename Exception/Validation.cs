@@ -8,6 +8,20 @@ namespace Do_an_OOP
 {
     public class Validation
     {
+        public static void CheckNoneId(string id)
+        {
+            Database db = new Database();
+            foreach (Employee item in db.Data)
+            {
+                if (item.Id.Equals(id))
+                {
+                    return;
+                }
+            }
+            Exception e = new NoneIdException();
+            throw e;
+        }
+
         public static void CheckId(string id)
         {
             Database db = new Database();
@@ -63,6 +77,7 @@ namespace Do_an_OOP
                 if (!result)
                 {
                     Console.WriteLine("Yêu cầu nhập số");
+                    Console.Write(">>: ");
                     InputGraRank();
                 }
                 CheckGraRank(graRank);
@@ -70,7 +85,8 @@ namespace Do_an_OOP
             }
             catch (GraduateRankException e)
             {
-                System.Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
+                Console.Write(">>: ");
                 return InputGraRank();
             }
         }
@@ -84,7 +100,8 @@ namespace Do_an_OOP
             }
             catch (NumberPhoneException e)
             {
-                System.Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
+                Console.Write("Nhập số điện thoại: ");
                 return InputPhone();
             }
 
@@ -99,7 +116,8 @@ namespace Do_an_OOP
             }
             catch (EmailException e)
             {
-                System.Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
+                Console.Write("Nhập email: ");
                 return InputEmail();
             }
         }
@@ -112,6 +130,7 @@ namespace Do_an_OOP
                 if (!result)
                 {
                     Console.WriteLine("Yêu cầu nhập số");
+                    Console.Write(">>: ");
                     InputEmpType();
                 }
                 CheckEmpType(employee_type);
@@ -119,7 +138,8 @@ namespace Do_an_OOP
             }
             catch (EmployeeTypeException e)
             {
-                System.Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
+                Console.Write(">>: ");
                 return InputEmpType();
             }
         }
@@ -134,8 +154,25 @@ namespace Do_an_OOP
             }
             catch (IdException e)
             {
-                System.Console.WriteLine(e.Message);
+                Console.WriteLine(e.Message);
+                Console.Write("Nhập id: ");
                 return InputId();
+            }
+        }
+
+        public static string InputNoneId()
+        {
+            try
+            {
+                string id = Console.ReadLine();
+                CheckNoneId(id);
+                return id;
+            }
+            catch (NoneIdException e)
+            {
+                Console.WriteLine(e.Message);
+                Console.Write("Nhập id: ");
+                return InputNoneId();
             }
         }
     }

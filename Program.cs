@@ -222,7 +222,7 @@ namespace Do_an_OOP
             {
                 case 0:
                     Console.Write("\nNhập id: ");
-                    string id = Console.ReadLine();
+                    string id = Validation.InputNoneId();
                     Console.Clear();
                     Console.WriteLine("Nhân viên bạn cần tìm:\n" + manage.FindById(id));
                     manage.FindById(id);
