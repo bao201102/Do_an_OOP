@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {}
+    "D:\\Study\\Do_an\\Do_an_OOP\\Do_an_OOP.csproj": {}
   },
   "projects": {
-    "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj": {
+    "D:\\Study\\Do_an\\Do_an_OOP\\Do_an_OOP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
+        "projectUniqueName": "D:\\Study\\Do_an\\Do_an_OOP\\Do_an_OOP.csproj",
         "projectName": "Do_an_OOP",
-        "projectPath": "D:\\Study\\Đồ_án\\Do_an_OOP\\Do_an_OOP.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "D:\\Study\\Đồ_án\\Do_an_OOP\\obj\\",
+        "projectPath": "D:\\Study\\Do_an\\Do_an_OOP\\Do_an_OOP.csproj",
+        "packagesPath": "C:\\Users\\bao20\\.nuget\\packages\\",
+        "outputPath": "D:\\Study\\Do_an\\Do_an_OOP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\bao20\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
